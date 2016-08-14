@@ -17,7 +17,12 @@ gulp.task('connect', function () {
 });
 
 gulp.task('copy:build', function () {
-    return gulp.src(['src/**.html', 'src/apple-touch-icon.png', 'src/favicon.ico', 'src/humans.txt', 'src/robots.txt'])
+    return gulp.src([
+            'src/**.html',
+            'src/apple-touch-icon.png',
+            'src/favicon.ico',
+            'src/humans.txt',
+            'src/robots.txt'])
         .pipe(gulp.dest('build'))
         .pipe(connect.reload());
 });
