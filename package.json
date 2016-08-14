@@ -1,0 +1,23 @@
+{
+  "name": "pattern-library",
+  "version": "1.0.0",
+  "description": "Pattern Library",
+  "scripts": {
+    "start": "gulp start",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelthorne/pattern-library.git"
+  },
+  "author": "Michael Thorne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelthorne/pattern-library/issues"
+  },
+  "homepage": "https://github.com/michaelthorne/pattern-library#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}
