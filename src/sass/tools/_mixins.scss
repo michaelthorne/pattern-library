@@ -1,0 +1,94 @@
+/**
+ * MIXINS
+ */
+
+/* -------------------------------------------------------------------------- *\
+   #TABLE OF CONTENTS
+\* -------------------------------------------------------------------------- */
+
+/**
+ * ANIMATION
+ * CLEARFIX
+ * KEYFRAMES
+ */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #ANIMATION
+\* -------------------------------------------------------------------------- */
+
+/**
+ * The animation CSS property is a shorthand property for animation-name, animation-duration, animation-timing-function,
+ * animation-delay, animation-iteration-count, animation-direction, animation-fill-mode and animation-play-state.
+ * https://developer.mozilla.org/en/docs/Web/CSS/animation
+ *
+ * E.g.:
+ *
+ * @include animation('<animation-name> <animation-duration> <animation-iteration-count>');
+ */
+
+@mixin animation($str) {
+    animation: #{$str};
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #CLEARFIX
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #KEYFRAMES
+\* -------------------------------------------------------------------------- */
+
+/**
+ * The @keyframes CSS at-rule lets authors control the intermediate steps in a CSS animation sequence by establishing
+ * keyframes (or waypoints) along the animation sequence that must be reached by certain points during the animation.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+ *
+ * E.g.
+ *
+   @include keyframes(<identifier>) {
+       from { <properties> }
+         to { <properties> }
+   }
+ */
+
+@mixin keyframes($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

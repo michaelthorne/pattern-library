@@ -1,5 +1,10 @@
 # Pattern Library
 
+## Getting Started
+
+`npm install`
+`npm start`
+
 ## Inspiration
 
 - [Boilerplate Style Guide](https://github.com/bjankord/Style-Guide-Boilerplate)
