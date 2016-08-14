@@ -1,0 +1,54 @@
+/* -------------------------------------------------------------------------- *\
+   #RESET
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Apply a natural box layout model to all elements
+ */
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+/**
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate
+ * Customize the background color to match your design
+ */
+
+::-moz-selection {
+    background: black;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: black;
+    color: white;
+    text-shadow: none;
+}
+
+/**
+ * Correct the `line-height` of placeholder text in Chrome.
+ * http://stackoverflow.com/a/17681447/648203
+ */
+
+::-webkit-input-placeholder {
+    line-height: normal;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes, images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
