@@ -48,7 +48,6 @@ gulp.task('serve', function () {
     });
 
     gulp.watch('src/sass/**/*.scss', ['sass:build']);
-    gulp.watch('src/**/*.html', ['copy:build']);
     gulp.watch('src/**/*.html', ['processhtml:build']).on('change', reload);
 });
 
