@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var del = require('del');
+var package = require('./package.json');
+var processHTML = require('gulp-processhtml');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 
@@ -32,6 +34,17 @@ gulp.task('html', function () {
         .pipe(connect.reload());
 });
 
+gulp.task('processhtml:build', function () {
+    return gulp.src('src/**/*.html')
+        .pipe(processHTML({
+            process: true,
+            data: {
+                version: package.version
+            }
+        }))
+        .pipe(gulp.dest('build'));
+});
+
 gulp.task('sass:build', function () {
     return gulp.src('src/sass/style.scss')
         .pipe(sass().on('error', sass.logError))
@@ -42,10 +55,11 @@ gulp.task('sass:build', function () {
 gulp.task('watch', function () {
     gulp.watch('src/sass/**/*.scss', ['sass:build']);
     gulp.watch('src/**/*.html', ['copy:build']);
+    gulp.watch('src/**/*.html', ['processhtml:build']);
 });
 
 gulp.task('build', function () {
-    runSequence('clean:build', ['copy:build', 'sass:build']);
+    runSequence('clean:build', ['copy:build', 'sass:build'], 'processhtml:build');
 });
 
 gulp.task('default', function () {

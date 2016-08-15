@@ -20,6 +20,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
+    "gulp-processHTML": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "run-sequence": "^1.2.2"
   }
