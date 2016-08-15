@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var del = require('del');
-var package = require('./package.json');
+var pkg = require('./package.json');
 var processHTML = require('gulp-processhtml');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
@@ -39,7 +39,7 @@ gulp.task('processhtml:build', function () {
         .pipe(processHTML({
             process: true,
             data: {
-                version: package.version
+                version: pkg.version
             }
         }))
         .pipe(gulp.dest('build'));
