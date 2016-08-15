@@ -51,3 +51,5 @@ gulp.task('build', function () {
 gulp.task('default', function () {
     runSequence('build', ['connect', 'watch']);
 });
+
+gulp.task('start', ['default']);
