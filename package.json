@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/michaelthorne/pattern-library#readme",
   "devDependencies": {
+    "browser-sync": "^2.14.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",

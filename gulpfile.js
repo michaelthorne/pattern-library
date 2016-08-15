@@ -1,8 +1,9 @@
 var gulp = require('gulp');
-var connect = require('gulp-connect');
+var browserSync = require('browser-sync').create();
 var del = require('del');
 var pkg = require('./package.json');
 var processHTML = require('gulp-processhtml');
+var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 
@@ -10,28 +11,14 @@ gulp.task('clean:build', function () {
     del(['build']);
 });
 
-gulp.task('connect', function () {
-    connect.server({
-        root: 'build',
-        livereload: true,
-        port: 1337
-    });
-});
-
 gulp.task('copy:build', function () {
     return gulp.src([
-            'src/**.html',
             'src/apple-touch-icon.png',
             'src/favicon.ico',
             'src/humans.txt',
             'src/robots.txt'])
         .pipe(gulp.dest('build'))
-        .pipe(connect.reload());
-});
-
-gulp.task('html', function () {
-    gulp.src('./app/*.html')
-        .pipe(connect.reload());
+        .pipe(browserSync.stream());
 });
 
 gulp.task('processhtml:build', function () {
@@ -42,28 +29,32 @@ gulp.task('processhtml:build', function () {
                 version: pkg.version
             }
         }))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('sass:build', function () {
     return gulp.src('src/sass/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('build/css'))
-        .pipe(connect.reload());
+        .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function () {
+gulp.task('serve', function () {
+    browserSync.init({
+        injectChanges: true,
+        port: 1337,
+        server: 'build'
+    });
+
     gulp.watch('src/sass/**/*.scss', ['sass:build']);
     gulp.watch('src/**/*.html', ['copy:build']);
-    gulp.watch('src/**/*.html', ['processhtml:build']);
+    gulp.watch('src/**/*.html', ['processhtml:build']).on('change', reload);
 });
 
-gulp.task('build', function () {
-    runSequence('clean:build', ['copy:build', 'sass:build'], 'processhtml:build');
-});
 
 gulp.task('default', function () {
-    runSequence('build', ['connect', 'watch']);
+    runSequence('clean:build', ['copy:build', 'sass:build'], 'processhtml:build', 'serve');
 });
 
 gulp.task('start', ['default']);
