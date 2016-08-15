@@ -17,8 +17,7 @@ gulp.task('copy:build', function () {
             'src/favicon.ico',
             'src/humans.txt',
             'src/robots.txt'])
-        .pipe(gulp.dest('build'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('processhtml:build', function () {
@@ -42,8 +41,7 @@ gulp.task('sass:build', function () {
 
 gulp.task('serve', function () {
     browserSync.init({
-        injectChanges: true,
-        port: 1337,
+        reloadDelay: 1000,
         server: 'build'
     });
 
@@ -53,7 +51,7 @@ gulp.task('serve', function () {
 
 
 gulp.task('default', function () {
-    runSequence('clean:build', ['copy:build', 'sass:build'], 'processhtml:build', 'serve');
+    runSequence('clean:build', ['copy:build', 'sass:build', 'processhtml:build'], 'serve');
 });
 
 gulp.task('start', ['default']);
