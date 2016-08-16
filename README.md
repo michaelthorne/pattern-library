@@ -13,6 +13,12 @@ npm install
 npm start
 ```
 
+## Contributing
+
+If you have a question or encounter any bugs, please [create a new issue](https://github.com/michaelthorne/pattern-library/issues)
+on GitHub. Alternatively, [submit a new pull request](https://github.com/michaelthorne/pattern-library/pull/new/master)
+if you’d like to contribute to the project directly.
+
 ## Inspiration
 
 - [A List Apart Pattern Library](http://patterns.alistapart.com)
