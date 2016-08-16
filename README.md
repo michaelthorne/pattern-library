@@ -9,6 +9,7 @@ The pattern library is a collection of recurring user interface design patterns 
 - [BEM methodology](https://en.bem.info/methodology)
 - [ITCSS architecture](http://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731)
 - [jQuery](https://jquery.com)
+- [Normalize.css](https://necolas.github.io/normalize.css)
 - [Sass](http://sass-lang.com)
  
 ## Getting Started
