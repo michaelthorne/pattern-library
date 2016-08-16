@@ -2,9 +2,25 @@
 
 ## Overview
 
-This pattern library is a collection of recurring user interface design patterns created to solve common design problems.
+The pattern library is a collection of recurring user interface design patterns created to solve common design problems.
 
+### Features
+
+- [BEM methodology](https://en.bem.info/methodology)
+- [ITCSS architecture](http://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731)
+- [jQuery](https://jquery.com)
+- [Sass](http://sass-lang.com)
+ 
 ## Getting Started
+
+### Requirements
+
+Before you get started, you need to ensure the following is installed and running on your computer:
+
+- [Git](http://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download)
+
+### Installation
 
 ```
 git clone git@github.com:michaelthorne/pattern-library.git
@@ -12,6 +28,7 @@ cd pattern-library.git
 npm install
 npm start
 ```
+
 
 ## Contributing
 
