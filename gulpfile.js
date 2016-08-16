@@ -5,6 +5,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var del = require('del');
+var moment = require('moment');
 var pkg = require('./package.json');
 var processHTML = require('gulp-processhtml');
 var reload = browserSync.reload;
@@ -41,6 +42,7 @@ gulp.task('processhtml:build', function () {
         .pipe(processHTML({
             process: true,
             data: {
+                updated: moment().format('YYYY/MM/DD hh:mm A'),
                 version: pkg.version
             }
         }))

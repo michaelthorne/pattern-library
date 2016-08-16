@@ -23,6 +23,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-processhtml": "^1.1.0",
     "gulp-sass": "^2.3.2",
+    "moment": "^2.14.1",
     "run-sequence": "^1.2.2"
   }
 }
