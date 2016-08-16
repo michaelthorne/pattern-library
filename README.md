@@ -13,5 +13,6 @@ npm start
 
 - [A List Apart Pattern Library](http://patterns.alistapart.com)
 - [Marvel Style Guide](https://marvelapp.com/styleguide)
+- [MailChimp Pattern Library](https://ux.mailchimp.com/patterns)
 - [Pattern Lab](http://patternlab.io)
 - [Solid](http://solid.buzzfeed.com)
