@@ -69,7 +69,8 @@ gulp.task('serve', function () {
     browserSync.init({
         port: 1337,
         reloadDelay: 1000,
-        server: 'build'
+        server: 'build',
+        startPath: '/styleguide'
     });
 
     gulp.watch('src/sass/**/*.scss', ['sass:build']);
