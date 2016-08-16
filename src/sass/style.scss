@@ -1,11 +1,26 @@
 /* -------------------------------------------------------------------------- *\
-   #STYLES
+   #STYLE
 \* -------------------------------------------------------------------------- */
 
-@import "settings";
-@import "tools";
-@import "generic";
-@import "base";
-@import "objects";
-@import "components";
-@import "trumps";
+/**
+ * Inverted Triangle CSS Methodology
+ *
+ * Settings:   Global variables, config switches.
+ * Tools:      Default mixins and functions.
+ * Generic:    Ground-zero styles (Normalize.css, resets, box-sizing).
+ * Base:       Unclassed HTML elements (type selectors).
+ * Objects:    Cosmetic-free design patterns.
+ * Components: Designed components, chunks of UI.
+ * Trumps:     Helpers and overrides.
+ *
+ * Managing CSS Projects with ITCSS:
+ * https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+ */
+
+@import "settings/settings";
+@import "tools/tools";
+@import "generic/generic";
+@import "base/base";
+@import "objects/objects";
+@import "components/components";
+@import "trumps/trumps";
