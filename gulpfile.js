@@ -1,3 +1,7 @@
+/*
+ * Plugins
+ */
+
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var del = require('del');
@@ -7,9 +11,17 @@ var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 
+/*
+ * Clean
+ */
+
 gulp.task('clean:build', function () {
-    del(['build']);
+    return del(['build']);
 });
+
+/*
+ * Copy
+ */
 
 gulp.task('copy:build', function () {
     return gulp.src([
@@ -19,6 +31,10 @@ gulp.task('copy:build', function () {
             'src/robots.txt'])
         .pipe(gulp.dest('build'));
 });
+
+/*
+ * Process HTML
+ */
 
 gulp.task('processhtml:build', function () {
     return gulp.src('src/**/*.html')
@@ -32,6 +48,10 @@ gulp.task('processhtml:build', function () {
         .pipe(browserSync.stream());
 });
 
+/*
+ * Sass
+ */
+
 gulp.task('sass:build', function () {
     return gulp.src('src/sass/style.scss')
         .pipe(sass().on('error', sass.logError))
@@ -39,8 +59,13 @@ gulp.task('sass:build', function () {
         .pipe(browserSync.stream());
 });
 
+/*
+ * Starts up a static server on localhost:1337 from the `build` folder
+ */
+
 gulp.task('serve', function () {
     browserSync.init({
+        port: 1337,
         reloadDelay: 1000,
         server: 'build'
     });
@@ -49,9 +74,18 @@ gulp.task('serve', function () {
     gulp.watch('src/**/*.html', ['processhtml:build']).on('change', reload);
 });
 
+/*
+ * The default task
+ * Note: `copy:build`, `sass:build`, `processhtml:build` run in parallel as they have no dependencies with each other.
+ */
 
 gulp.task('default', function () {
     runSequence('clean:build', ['copy:build', 'sass:build', 'processhtml:build'], 'serve');
 });
+
+/*
+ * Alias for the default task
+ * e.g. `npm start`
+ */
 
 gulp.task('start', ['default']);
