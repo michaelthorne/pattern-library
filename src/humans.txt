@@ -11,5 +11,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Gulp, jQuery, Normalize.css
+    HTML5, CSS3
+    Gulp, jQuery, Normalize.css, Sass
