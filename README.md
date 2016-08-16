@@ -1,5 +1,7 @@
 # Pattern Library
 
+> A collection of recurring user interface design patterns created to solve common design problems.
+
 ## Getting Started
 
 ```
