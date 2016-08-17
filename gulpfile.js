@@ -70,7 +70,7 @@ gulp.task('serve', function () {
         port: 1337,
         reloadDelay: 1000,
         server: 'build',
-        startPath: '/styleguide'
+        startPath: '/pattern-library'
     });
 
     gulp.watch('src/sass/**/*.scss', ['sass:build']);
