@@ -18,7 +18,6 @@ var del = require('del');
 var moment = require('moment');
 var pkg = require('./package.json');
 var processHTML = require('gulp-processhtml');
-var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 
