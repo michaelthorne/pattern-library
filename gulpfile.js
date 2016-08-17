@@ -26,10 +26,10 @@ gulp.task('clean:build', function () {
 
 gulp.task('copy:build', function () {
     return gulp.src([
-            'src/apple-touch-icon.png',
-            'src/favicon.ico',
-            'src/humans.txt',
-            'src/robots.txt'])
+        'src/apple-touch-icon.png',
+        'src/favicon.ico',
+        'src/humans.txt',
+        'src/robots.txt'])
         .pipe(gulp.dest('build'));
 });
 
@@ -88,7 +88,7 @@ gulp.task('default', function () {
 
 /*
  * Alias for the default task
- * e.g. `npm start`
+ * i.e. `npm start`
  */
 
 gulp.task('start', ['default']);
