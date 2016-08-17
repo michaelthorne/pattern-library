@@ -16,7 +16,7 @@ var sass = require('gulp-sass');
  * Clean
  */
 
-gulp.task('clean:build', function () {
+gulp.task('clean', function () {
     return del(['build']);
 });
 
@@ -24,7 +24,8 @@ gulp.task('clean:build', function () {
  * Copy
  */
 
-gulp.task('copy:build', function () {
+// Miscellaneous static files
+gulp.task('copy:misc', function () {
     return gulp.src([
         'src/apple-touch-icon.png',
         'src/favicon.ico',
@@ -33,11 +34,29 @@ gulp.task('copy:build', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Vendor JavaScript
+gulp.task('copy:js:vendor', function () {
+    return gulp.src([
+        'src/js/vendor/jquery.js',
+        'src/js/vendor/webfontloader.js'])
+        .pipe(gulp.dest('build/js/vendor'))
+        .pipe(browserSync.stream());
+});
+
+// Custom JavaScript
+gulp.task('copy:js:custom', function () {
+    return gulp.src([
+        'src/js/main.js',
+        'src/js/plugins.js'])
+        .pipe(gulp.dest('build/js'))
+        .pipe(browserSync.stream());
+});
+
 /*
  * Process HTML
  */
 
-gulp.task('processhtml:build', function () {
+gulp.task('processhtml', function () {
     return gulp.src('src/**/*.html')
         .pipe(processHTML({
             process: true,
@@ -54,7 +73,7 @@ gulp.task('processhtml:build', function () {
  * Sass
  */
 
-gulp.task('sass:build', function () {
+gulp.task('sass', function () {
     return gulp.src('src/sass/**.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('build/css'))
@@ -73,17 +92,18 @@ gulp.task('serve', function () {
         startPath: '/pattern-library'
     });
 
-    gulp.watch('src/**/*.scss', ['sass:build']);
-    gulp.watch('src/**/*.html', ['processhtml:build']).on('change', reload);
+    gulp.watch('src/js/vendor/*.js', ['copy:js:vendor']);
+    gulp.watch('src/js/*.js', ['copy:js:custom']);
+    gulp.watch('src/**/*.scss', ['sass']);
+    gulp.watch('src/**/*.html', ['processhtml']).on('change', reload);
 });
 
 /*
  * The default task
- * Note: `copy:build`, `sass:build`, `processhtml:build` run in parallel as they have no dependencies with each other.
  */
 
 gulp.task('default', function () {
-    runSequence('clean:build', ['copy:build', 'sass:build', 'processhtml:build'], 'serve');
+    runSequence('clean', ['copy:misc', 'copy:js:custom', 'copy:js:vendor', 'sass', 'processhtml'], 'serve');
 });
 
 /*
