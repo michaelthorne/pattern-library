@@ -1,6 +1,6 @@
-/* -------------------------------------------------------------------------- *\
-   #PATTERN LIBRARY
-\* -------------------------------------------------------------------------- */
+/**
+ * PATTERN LIBRARY
+ */
 
 /**
  * These styles are only required for the presentational UI of the pattern library and not the website or application.
@@ -8,6 +8,55 @@
  * All classes are prefixed with `pl-` so as to avoid any conflicts.
  */
 
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #TABLE OF CONTENTS
+\* -------------------------------------------------------------------------- */
+
+/**
+ * VARIABLES
+ * HTML
+ */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #VARIABLES
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Colors
+ */
+
+$pl-color-black:      #111;
+$pl-color-gray:       #aaa;
+$pl-color-silver:     #ddd;
+$pl-color-white:      #fff;
+$pl-color-blue-dark:  #001f3f;
+$pl-color-blue:       #0074d9;
+$pl-color-blue-light: #7fdbFF;
+
+/**
+ * Fonts
+ */
+
+$pl-font-primary: "Roboto Mono", monospace;
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HTML
+\* -------------------------------------------------------------------------- */
+
 .pl-html {
-    background-color: silver;
+    background-color: $pl-color-white;
+    color: $pl-color-black;
+    font: 100%/1.5 $pl-font-primary;
 }
