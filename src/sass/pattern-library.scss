@@ -1,0 +1,13 @@
+/* -------------------------------------------------------------------------- *\
+   #PATTERN LIBRARY
+\* -------------------------------------------------------------------------- */
+
+/**
+ * These styles are only required for the presentational UI of the pattern library and not the website or application.
+ * It compiles to `pattern-library.css` and does not need to be included in your HTML.
+ * All classes are prefixed with `pl-` so as to avoid any conflicts.
+ */
+
+.pl-html {
+    background-color: silver;
+}

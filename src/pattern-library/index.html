@@ -1,13 +1,16 @@
 <!doctype html>
 <html class="pl-html">
 <head>
-    <title>Pattern Library</title>
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pattern Library – Name of Project</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/pattern-library/style.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
 <main role="main">
@@ -16,14 +19,12 @@
     </header>
 
     <main role="main">
-        <h1>Pattern Library</h1>
-        <h2>Name of Project</h2>
-        <span>Version: <%= version %></span>
-        <span>Updated: <%= updated %></span>
+        <h1>Name of Project</h1>
+        <h2>Pattern Library <span>v<%= version %></span></h2>
     </main>
 
     <footer role="contentinfo">
-
+        <div>Last Modified: <%= updated %></div>
     </footer>
 </main>
 </body>

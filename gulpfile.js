@@ -42,7 +42,7 @@ gulp.task('processhtml:build', function () {
         .pipe(processHTML({
             process: true,
             data: {
-                updated: moment().format('YYYY/MM/DD hh:mm A'),
+                updated: moment().format('MMM DD, YYYY [at] hh:mm A'),
                 version: pkg.version
             }
         }))
@@ -55,7 +55,7 @@ gulp.task('processhtml:build', function () {
  */
 
 gulp.task('sass:build', function () {
-    return gulp.src('src/sass/style.scss')
+    return gulp.src('src/sass/**.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('build/css'))
         .pipe(browserSync.stream());

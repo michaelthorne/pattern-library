@@ -1,26 +1,89 @@
 /* -------------------------------------------------------------------------- *\
-   #STYLE
+   #STYLES
 \* -------------------------------------------------------------------------- */
 
 /**
- * Inverted Triangle CSS Methodology
+ * Inverted Triangle CSS Methodology by Harry Roberts @csswizardry
  *
- * Settings:   Global variables, config switches.
- * Tools:      Default mixins and functions.
- * Generic:    Ground-zero styles (Normalize.css, resets, box-sizing).
- * Base:       Unclassed HTML elements (type selectors).
- * Objects:    Cosmetic-free design patterns.
- * Components: Designed components, chunks of UI.
- * Trumps:     Helpers and overrides.
+ * SETTINGS:   Global variables, config switches.
+ * TOOLS:      Default mixins and functions.
+ * GENERIC:    Ground-zero styles (Normalize.css, resets, box-sizing).
+ * BASE:       Unclassed HTML elements (type selectors).
+ * OBJECTS:    Cosmetic-free design patterns.
+ * COMPONENTS: Designed components, chunks of UI.
+ * TRUMPS:     Helpers and overrides.
  *
  * Managing CSS Projects with ITCSS:
  * https://speakerdeck.com/dafed/managing-css-projects-with-itcss
  */
 
-@import "settings/settings";
-@import "tools/tools";
-@import "generic/generic";
-@import "base/base";
-@import "objects/objects";
-@import "components/components";
-@import "trumps/trumps";
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #SETTINGS
+\* -------------------------------------------------------------------------- */
+
+@import "settings/variables";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #TOOLS
+\* -------------------------------------------------------------------------- */
+
+@import "tools/mixins";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #GENERIC
+\* -------------------------------------------------------------------------- */
+
+@import "generic/normalize";
+@import "generic/reset";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #BASE
+\* -------------------------------------------------------------------------- */
+
+@import "base/html";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #OBJECTS
+\* -------------------------------------------------------------------------- */
+
+@import "objects/grid";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #COMPONENTS
+\* -------------------------------------------------------------------------- */
+
+@import "components/card";
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #TRUMPS
+\* -------------------------------------------------------------------------- */
+
+@import "trumps/utilities";

@@ -24,8 +24,8 @@ Before you get started, you need to ensure the following is installed and runnin
 ### Installation
 
 ```
-git clone git@github.com:michaelthorne/pattern-library.git
-cd pattern-library.git
+git clone git@github.com:michaelthorne/pattern-library.git name-of-project
+cd name-of-project
 npm install
 npm start
 ```
