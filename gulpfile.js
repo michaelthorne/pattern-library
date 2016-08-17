@@ -73,7 +73,7 @@ gulp.task('serve', function () {
         startPath: '/pattern-library'
     });
 
-    gulp.watch('src/sass/**/*.scss', ['sass:build']);
+    gulp.watch('src/**/*.scss', ['sass:build']);
     gulp.watch('src/**/*.html', ['processhtml:build']).on('change', reload);
 });
 
