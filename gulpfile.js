@@ -1,4 +1,14 @@
 /*
+ * Variables
+ */
+
+var paths = {
+    src: 'src/',
+    build: 'build/',
+    dist: 'dist/'
+};
+
+/*
  * Plugins
  */
 
@@ -17,38 +27,34 @@ var sass = require('gulp-sass');
  */
 
 gulp.task('clean', function () {
-    return del(['build']);
+    return del([paths.build]);
 });
 
 /*
  * Copy
  */
 
-// Miscellaneous static files
-gulp.task('copy:misc', function () {
+gulp.task('assets', function () {
     return gulp.src([
-        'src/apple-touch-icon.png',
-        'src/favicon.ico',
-        'src/humans.txt',
-        'src/robots.txt'])
-        .pipe(gulp.dest('build'));
+            paths.src + 'apple-touch-icon.png',
+            paths.src + 'favicon.ico',
+            paths.src + 'humans.txt',
+            paths.src + 'robots.txt']
+        )
+        .pipe(gulp.dest(paths.build));
 });
 
-// Vendor JavaScript
-gulp.task('copy:js:vendor', function () {
-    return gulp.src([
-        'src/js/vendor/jquery.js',
-        'src/js/vendor/webfontloader.js'])
-        .pipe(gulp.dest('build/js/vendor'))
-        .pipe(browserSync.stream());
-});
+/*
+ * JavaScript
+ */
 
-// Custom JavaScript
-gulp.task('copy:js:custom', function () {
+gulp.task('scripts', function () {
     return gulp.src([
-        'src/js/main.js',
-        'src/js/plugins.js'])
-        .pipe(gulp.dest('build/js'))
+            paths.src + 'js/*',
+            paths.src + 'js/*/*'], {
+            'base': 'src'
+        })
+        .pipe(gulp.dest(paths.build))
         .pipe(browserSync.stream());
 });
 
@@ -57,7 +63,7 @@ gulp.task('copy:js:custom', function () {
  */
 
 gulp.task('processhtml', function () {
-    return gulp.src('src/**/*.html')
+    return gulp.src(paths.src + '**/*.html')
         .pipe(processHTML({
             process: true,
             data: {
@@ -65,7 +71,7 @@ gulp.task('processhtml', function () {
                 version: pkg.version
             }
         }))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest(paths.build))
         .pipe(browserSync.stream());
 });
 
@@ -74,36 +80,43 @@ gulp.task('processhtml', function () {
  */
 
 gulp.task('sass', function () {
-    return gulp.src('src/sass/**.scss')
+    return gulp.src(paths.src + 'sass/**.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest(paths.build + '/css'))
         .pipe(browserSync.stream());
 });
 
 /*
- * Starts up a static server on localhost:1337 from the `build` folder
+ * Starts up a static server at http://localhost:1337 from the `build` folder
  */
 
 gulp.task('serve', function () {
     browserSync.init({
         port: 1337,
         reloadDelay: 1000,
-        server: 'build',
+        server: paths.build,
         startPath: '/pattern-library'
     });
 
-    gulp.watch('src/js/vendor/*.js', ['copy:js:vendor']);
-    gulp.watch('src/js/*.js', ['copy:js:custom']);
-    gulp.watch('src/**/*.scss', ['sass']);
-    gulp.watch('src/**/*.html', ['processhtml']).on('change', reload);
+    gulp.watch(paths.src + '**/*.js', ['scripts']);
+    gulp.watch(paths.src + '**/*.scss', ['sass']);
+    gulp.watch(paths.src + '**/*.html', ['processhtml']);
 });
 
 /*
- * The default task
+ * Default task
  */
 
 gulp.task('default', function () {
-    runSequence('clean', ['copy:misc', 'copy:js:custom', 'copy:js:vendor', 'sass', 'processhtml'], 'serve');
+    runSequence('build', ['serve']);
+});
+
+/*
+ * Build task
+ */
+
+gulp.task('build', function () {
+    runSequence('clean', ['assets', 'scripts', 'sass', 'processhtml']);
 });
 
 /*
