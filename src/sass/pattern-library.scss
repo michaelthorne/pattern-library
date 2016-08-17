@@ -3,7 +3,7 @@
  */
 
 /**
- * These styles are only required for the presentational UI of the pattern library and not the website or application.
+ * These styles are only required for the presentational UI of this pattern library and not your website or application.
  * It compiles to `pattern-library.css` and does not need to be included in your HTML.
  * All classes are prefixed with `pl-` so as to avoid any conflicts.
  */
@@ -31,6 +31,7 @@
 
 /**
  * Colors
+ * http://clrs.cc/
  */
 
 $pl-color-black:      #111;
@@ -43,6 +44,7 @@ $pl-color-blue-light: #7fdbFF;
 
 /**
  * Fonts
+ * https://fonts.google.com/specimen/Roboto+Mono
  */
 
 $pl-font-primary: "Roboto Mono", monospace;
