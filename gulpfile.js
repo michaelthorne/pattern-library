@@ -79,7 +79,7 @@ gulp.task('processhtml', function () {
  */
 
 gulp.task('sass', function () {
-    return gulp.src(paths.src + 'sass/**.scss')
+    return gulp.src(paths.src + 'sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(paths.build + '/css'))
         .pipe(browserSync.stream());

@@ -1,0 +1,368 @@
+/**
+ * PATTERN LIBRARY
+ */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #TABLE OF CONTENTS
+\* -------------------------------------------------------------------------- */
+
+/**
+ * VARIABLES
+ * HTML
+ * HEADER
+ * NAV
+ * HAMBURGER
+ * MAIN
+ * SECTION
+ */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #VARIABLES
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Breakpoints
+ */
+
+$pl-bp-small: 45.00em; /*  720 / 16 */
+
+/**
+ * Colors
+ * http://clrs.cc/
+ */
+
+$pl-color-primary:    #ff851b;
+$pl-color-black:      #111;
+$pl-color-gray:       #aaa;
+$pl-color-silver:     #ddd;
+$pl-color-white:      #fff;
+
+/**
+ * Fonts
+ * https://fonts.google.com/specimen/Roboto+Mono
+ */
+
+$pl-font-primary: "Roboto Mono", monospace;
+
+/**
+ * Weights
+ */
+
+$pl-font-weight-normal: 400;
+$pl-font-weight-bold:   700;
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HTML
+\* -------------------------------------------------------------------------- */
+
+.pl-html {
+    background-color: $pl-color-white;
+    color: $pl-color-black;
+    font: 100%/1.5 $pl-font-primary;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HEADER
+\* -------------------------------------------------------------------------- */
+
+.pl-header {
+    margin-bottom: 2em;
+
+    /* Title */
+
+    .pl-header__title {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+
+        & + .pl-header__synopsis {
+            font-size: 1.25em; /* 20 / 16 */
+            margin-top: 0.25em;
+        }
+    }
+
+    /* Synopsis */
+
+    .pl-header__synopsis {
+        margin-bottom: 0;
+    }
+
+    /* Label */
+
+    .pl-header__label {
+        color: $pl-color-gray;
+        font-size: 0.7em; /* 14 / 20 */
+        font-weight: $pl-font-weight-bold;
+    }
+
+    /**
+     * Primary
+     */
+
+    &.pl-header--primary {
+        border-bottom: 0.0625em solid $pl-color-silver;
+        margin-bottom: 0;
+        position: relative;
+
+        /* Link */
+
+        .pl-link {
+            display: inline-block;
+            padding: 1em;
+
+            /* Logo */
+
+            .pl-logo {
+                display: inline-block;
+                max-height: 3.125em; /* 50 / 16 */
+                width: auto;
+            }
+        }
+
+        /* Nav */
+
+        .pl-nav {
+            display: none;
+
+            &.is-active {
+                display: block;
+            }
+        }
+
+        /* Hamburger */
+
+        .pl-hamburger {
+            position: absolute;
+            right: 1em;
+            top: 1.75em;
+        }
+    }
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-header {
+
+        &.pl-header--primary {
+            border-bottom: 0;
+            border-right: 0.0625em solid $pl-color-silver;
+            height: 100%;
+            left: 0;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            width: 18em; /* 288 / 16 */
+
+            .pl-link {
+                display: block;
+
+                .pl-logo {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+
+            .pl-nav {
+                display: block;
+            }
+
+            .pl-hamburger {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #NAV
+\* -------------------------------------------------------------------------- */
+
+.pl-nav {
+
+    /* List */
+
+    .pl-list {
+        border-top: 0.0625em solid $pl-color-silver;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .pl-list {
+            border-top: 0;
+        }
+
+        /* Item */
+
+        .pl-list__item {
+            border-bottom: 0.0625em solid $pl-color-silver;
+            font-size: 0.875em; /* 14 / 16 */
+            font-weight: $pl-font-weight-bold;
+            text-transform: uppercase;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            .pl-list__item {
+                font-size: 1em; /* 16 / 16 */
+                font-weight: $pl-font-weight-normal;
+                text-transform: none;
+            }
+        }
+
+        /* Link */
+
+        .pl-list__link {
+            border-left: 0.25em solid transparent;
+            color: $pl-color-black;
+            display: block;
+            padding: 0.75em 1.5em 0.75em 1.25em;
+            text-decoration: none;
+            transition: border-color 0.25s;
+
+            &:focus,
+            &:hover {
+                border-left-color: $pl-color-primary;
+            }
+        }
+    }
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-nav {
+
+        .pl-list {
+
+            .pl-list__item {
+                padding-top: 2em;
+
+                .pl-list__item {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HAMBURGER
+\* -------------------------------------------------------------------------- */
+
+.pl-hamburger {
+    display: inline-block;
+    height: 1.5em; /* 24 / 16 */
+    line-height: 1;
+
+    /* Bar */
+
+    .pl-hamburger__bar {
+        background-color: $pl-color-black;
+        display: inline-block;
+        height: 0.1875em;
+        position: relative;
+        transition: background-color 0.25s;
+        width: 1.75em;
+
+        &:before {
+            background-color: $pl-color-black;
+            content: "";
+            display: inline-block;
+            height: 0.1875em;
+            position: absolute;
+            top: -0.5625em;
+            transition: transform 0.25s;
+            width: 1.75em;
+        }
+
+        &:after {
+            background-color: $pl-color-black;
+            bottom: -0.5625em;
+            content: "";
+            display: inline-block;
+            height: 0.1875em;
+            position: absolute;
+            transition: transform 0.25s;
+            width: 1.75em;
+        }
+    }
+
+    /**
+     * Active
+     */
+
+    &.is-active {
+
+        .pl-hamburger__bar {
+            background-color: transparent;
+
+            &:before {
+                top: 0;
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #MAIN
+\* -------------------------------------------------------------------------- */
+
+.pl-main {
+    padding: 1em;
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-main {
+        margin-left: 18em;
+        padding: 2em;
+        width: calc(100% - 18em);
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #SECTION
+\* -------------------------------------------------------------------------- */
+
+.pl-section {
+
+}
