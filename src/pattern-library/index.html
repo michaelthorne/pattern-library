@@ -22,18 +22,44 @@
     </script>
 </head>
 <body>
-    <header role="banner">
+    <header class="pl-header" role="banner">
+        <a class="pl-link" href="index.html">
+            <img class="pl-logo" src="http://placehold.it/180x50" width="180" height="50" alt="Name of Project logo">
+        </a>
 
+        <nav class="pl-nav">
+            <ol class="pl-list">
+                <li class="pl-list__item">
+                    <a class="pl-list__link" href="index.html">Brand</a>
+                    <ol class="pl-list">
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Logo</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Color</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Font</a></li>
+                    </ol>
+                </li>
+                <li class="pl-list__item">
+                    <a class="pl-list__link" href="index.html">Elements</a>
+                    <ol class="pl-list">
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Headings</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Paragraph</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="index.html">Blockquote</a></li>
+                    </ol>
+                </li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Forms</a></li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Patterns</a></li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Templates</a></li>
+            </ol>
+        </nav>
     </header>
 
-    <main role="main">
+    <main class="pl-main" role="main">
         <h1>Name of Project</h1>
         <h2>Pattern Library <span>v<%= version %></span></h2>
-    </main>
 
-    <footer role="contentinfo">
-        <div>Last Modified: <%= updated %></div>
-    </footer>
+        <footer class="pl-footer" role="contentinfo">
+            <div>Last Modified: <%= updated %></div>
+        </footer>
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
