@@ -2,7 +2,7 @@
 
 ## Overview
 
-The pattern library is a collection of recurring user interface design patterns created to solve common design problems.
+This pattern library is a collection of recurring user interface design patterns created to solve common design problems.
 
 ### Features
 
