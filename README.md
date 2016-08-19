@@ -40,6 +40,10 @@ if you’d like to contribute to the project directly.
 ## Inspiration
 
 - [A List Apart Pattern Library](http://patterns.alistapart.com)
+- [Astrum Pattern Library](http://astrum.nodividestudio.com/pattern-library)
+- [Cloud Four Pattern Library](http://cloudfour-patterns.netlify.com)
+- [Code for America Style Guide](http://style.codeforamerica.org)
+- [Lonely Planet Style Guide](http://rizzo.lonelyplanet.com/styleguide)
 - [Marvel Style Guide](https://marvelapp.com/styleguide)
 - [MailChimp Pattern Library](https://ux.mailchimp.com/patterns)
 - [Pattern Lab](http://patternlab.io)

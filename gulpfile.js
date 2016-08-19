@@ -66,7 +66,7 @@ gulp.task('processhtml', function () {
         .pipe(processHTML({
             process: true,
             data: {
-                updated: moment().format('MMM DD, YYYY [at] hh:mm A'),
+                updated: moment().format('MMM DD, YYYY [•] hh:mm A'),
                 version: pkg.version
             }
         }))

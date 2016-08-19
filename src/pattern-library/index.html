@@ -58,7 +58,7 @@
 
     <main class="pl-main" role="main">
         <section class="pl-section">
-            <header class="pl-header">
+            <header class="pl-header pl-header--section">
                 <h1 class="pl-header__title">Name of Project</h1>
                 <p class="pl-header__synopsis">Pattern Library <span class="pl-header__label">v<%= version %></span></p>
             </header>
@@ -69,7 +69,7 @@
                 <p>This pattern library is a collection of recurring user interface design patterns created to solve common design
                     problems.</p>
 
-                <h2>Features</h2>
+                <h3>Features</h3>
 
                 <ul>
                     <li><a href="https://en.bem.info/methodology">BEM methodology</a></li>
@@ -78,12 +78,51 @@
                     <li><a href="https://necolas.github.io/normalize.css">Normalize.css</a></li>
                     <li><a href="http://sass-lang.com">Sass</a></li>
                 </ul>
+
+                <h2>Getting Started</h2>
+
+                <h3>Requirements</h3>
+
+                <p>Before you get started, you need to ensure the following is installed and running on your computer:</p>
+
+                <ul>
+                    <li><a href="http://git-scm.com/downloads">Git</a></li>
+                    <li><a href="https://nodejs.org/en/download">Node.js</a></li>
+                </ul>
+
+                <h3>Installation</h3>
+
+                <code>git clone git@github.com:michaelthorne/pattern-library.git name-of-project
+                    cd name-of-project
+                    npm install
+                    npm start
+                </code>
+
+                <h2>Contributing</h2>
+
+                <p>If you have a question or encounter any bugs, please <a href="https://github.com/michaelthorne/pattern-library/issues">create a new issue</a>
+                    on GitHub. Alternatively, <a href="https://github.com/michaelthorne/pattern-library/pull/new/master">submit a new pull request</a>
+                    if you’d like to contribute to the project directly.</p>
+
+                <h2>Inspiration</h2>
+
+                <ul>
+                    <li><a href="http://patterns.alistapart.com">A List Apart Pattern Library</a></li>
+                    <li><a href="http://astrum.nodividestudio.com/pattern-library">Astrum Pattern Library</a></li>
+                    <li><a href="http://cloudfour-patterns.netlify.com">Cloud Four Pattern Library</a></li>
+                    <li><a href="http://style.codeforamerica.org">Code for America Style Guide</a></li>
+                    <li><a href="http://rizzo.lonelyplanet.com/styleguide">Lonely Planet Style Guide</a></li>
+                    <li><a href="https://marvelapp.com/styleguide">Marvel Style Guide</a></li>
+                    <li><a href="https://ux.mailchimp.com/patterns">MailChimp Pattern Library</a></li>
+                    <li><a href="http://patternlab.io">Pattern Lab</a></li>
+                    <li><a href="http://solid.buzzfeed.com">Solid</a></li>
+                </ul>
+
+                <h2>Updated</h2>
+
+                <p><%= updated %></p>
             </article>
         </section>
-
-        <footer class="pl-footer" role="contentinfo">
-            <div>Last Modified: <%= updated %></div>
-        </footer>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

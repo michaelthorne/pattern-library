@@ -18,6 +18,7 @@
  * HAMBURGER
  * MAIN
  * SECTION
+ * ARTICLE
  */
 
 
@@ -34,6 +35,7 @@
 
 $pl-bp-small:  45.00em; /*  720 / 16 */
 $pl-bp-medium: 60.00em; /*  960 / 16 */
+$pl-bp-large:  80.00em; /* 1280 / 16 */
 
 /**
  * Colors
@@ -120,7 +122,6 @@ $pl-font-weight-bold:   700;
      */
 
     &.pl-header--primary {
-        border-bottom: 0.0625em solid $pl-color-silver;
         margin-bottom: 0;
         position: relative;
 
@@ -157,6 +158,15 @@ $pl-font-weight-bold:   700;
             top: 1.75em;
         }
     }
+
+    /**
+     * Section
+     */
+
+    &.pl-header--section {
+        border-bottom: 0.125em solid $pl-color-silver;
+        padding-bottom: 2em;
+    }
 }
 
 @media all and (min-width: $pl-bp-small) {
@@ -172,7 +182,6 @@ $pl-font-weight-bold:   700;
         }
 
         &.pl-header--primary {
-            border-bottom: 0;
             border-right: 0.0625em solid $pl-color-silver;
             height: 100%;
             left: 0;
@@ -211,6 +220,7 @@ $pl-font-weight-bold:   700;
 \* -------------------------------------------------------------------------- */
 
 .pl-nav {
+    border-bottom: 0.0625em solid $pl-color-silver;
 
     /* List */
 
@@ -370,6 +380,13 @@ $pl-font-weight-bold:   700;
     }
 }
 
+@media all and (min-width: $pl-bp-large) {
+
+    .pl-main {
+        padding: 6em;
+    }
+}
+
 
 
 
@@ -380,4 +397,76 @@ $pl-font-weight-bold:   700;
 
 .pl-section {
 
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #ARTICLE
+\* -------------------------------------------------------------------------- */
+
+.pl-article {
+    max-width: 42em; /* 672 / 16 */
+
+    /* Headings */
+
+    h2, h3 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 + h3 {
+        margin-top: 1.5rem;
+    }
+
+    /* Paragraph */
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        & + p,
+        & + ul {
+            margin-top: 1.5rem;
+        }
+    }
+
+    /* Unordered List */
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        & + p,
+        & + ul {
+            margin-top: 1.5rem;
+        }
+    }
+
+    /* Anchor */
+
+    a {
+        border-bottom: 0.125em solid $pl-color-silver;
+        color: $pl-color-black;
+        text-decoration: none;
+        transition: border-color 0.25s;
+
+        &:focus,
+        &:hover {
+            border-bottom-color: $pl-color-primary;
+        }
+    }
+
+    /* Code */
+
+    code {
+        display: block;
+        white-space: pre-line;
+    }
 }
