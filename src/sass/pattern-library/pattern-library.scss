@@ -122,6 +122,7 @@ $pl-font-weight-bold:   700;
      */
 
     &.pl-header--primary {
+        border-bottom: 0.0625em solid $pl-color-silver;
         margin-bottom: 0;
         position: relative;
 
@@ -182,6 +183,7 @@ $pl-font-weight-bold:   700;
         }
 
         &.pl-header--primary {
+            border-bottom: 0;
             border-right: 0.0625em solid $pl-color-silver;
             height: 100%;
             left: 0;
@@ -220,7 +222,6 @@ $pl-font-weight-bold:   700;
 \* -------------------------------------------------------------------------- */
 
 .pl-nav {
-    border-bottom: 0.0625em solid $pl-color-silver;
 
     /* List */
 
@@ -270,6 +271,7 @@ $pl-font-weight-bold:   700;
 @media all and (min-width: $pl-bp-small) {
 
     .pl-nav {
+        border-bottom: 0.0625em solid $pl-color-silver;
 
         .pl-list {
 
@@ -361,7 +363,7 @@ $pl-font-weight-bold:   700;
 \* -------------------------------------------------------------------------- */
 
 .pl-main {
-    padding: 1em;
+    padding: 2em 1em;
 }
 
 @media all and (min-width: $pl-bp-small) {
@@ -411,6 +413,13 @@ $pl-font-weight-bold:   700;
     max-width: 42em; /* 672 / 16 */
 
     /* Headings */
+
+    h2 {
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 
     h2, h3 {
         margin-top: 3rem;
