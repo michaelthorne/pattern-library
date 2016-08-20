@@ -36,6 +36,7 @@
 $pl-bp-small:  45.00em; /*  720 / 16 */
 $pl-bp-medium: 60.00em; /*  960 / 16 */
 $pl-bp-large:  80.00em; /* 1280 / 16 */
+$pl-bp-xl:     90.00em; /* 1440 / 16 */
 
 /**
  * Colors
@@ -386,6 +387,13 @@ $pl-font-weight-bold:   700;
 
     .pl-main {
         padding: 6em;
+    }
+}
+
+@media all and (min-width: $pl-bp-xl) {
+
+    .pl-main {
+        padding: 8em;
     }
 }
 
