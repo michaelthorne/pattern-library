@@ -12,6 +12,8 @@
 
 /**
  * VARIABLES
+ * MIXINS
+ * IMPORTS
  * HTML
  * HEADER
  * NAV
@@ -19,6 +21,7 @@
  * MAIN
  * SECTION
  * ARTICLE
+ * PATTERN
  */
 
 
@@ -62,6 +65,37 @@ $pl-font-primary: "Roboto Mono", monospace;
 
 $pl-font-weight-normal: 400;
 $pl-font-weight-bold:   700;
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #MIXINS
+\* -------------------------------------------------------------------------- */
+
+@mixin pl-clearfix() {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #IMPORTS
+\* -------------------------------------------------------------------------- */
+
+@import "highlight";
+@import "tooltip";
 
 
 
@@ -159,12 +193,17 @@ $pl-font-weight-bold:   700;
         }
     }
 
+    & + .pl-article {
+        margin-top: 2em;
+    }
+
     /**
      * Main
      */
 
     &.pl-header--main {
         border-bottom: 0.125em solid $pl-color-silver;
+        margin-bottom: 0;
         padding-bottom: 2em;
 
         .pl-header__title {
@@ -177,9 +216,25 @@ $pl-font-weight-bold:   700;
      */
 
     &.pl-header--section {
+        margin-bottom: 4em;
 
         .pl-header__title {
             font-size: 1.5em; /* 24 / 16 */
+        }
+    }
+
+    /**
+     * Pattern
+     */
+
+    &.pl-header--pattern {
+
+        .pl-header__title {
+            font-size: 1.125em; /* 18 / 16 */
+        }
+
+        .pl-header__synopsis {
+            font-size: 1em;
         }
     }
 }
@@ -227,8 +282,8 @@ $pl-font-weight-bold:   700;
 
     .pl-header {
 
-        &.pl-header--main {
-            margin-bottom: 4em;
+        & + .pl-article {
+            margin-top: 4em;
         }
     }
 }
@@ -419,6 +474,19 @@ $pl-font-weight-bold:   700;
 
 .pl-section {
 
+    & + .pl-section {
+        padding-top: 2em;
+    }
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-section {
+
+        & + .pl-section {
+            padding-top: 4em;
+        }
+    }
 }
 
 
@@ -497,5 +565,62 @@ $pl-font-weight-bold:   700;
     code {
         display: block;
         white-space: pre-line;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #PATTERN
+\* -------------------------------------------------------------------------- */
+
+.pl-pattern {
+    @include pl-clearfix();
+    margin-bottom: 4em;
+
+    /* Example */
+
+    .pl-pattern__example {
+        margin-top: 2em;
+        position: relative;
+
+        pre {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            code {
+                font-size: 0.875em; /* 14 / 16 */
+                padding: 2em;
+            }
+        }
+
+        button {
+            background-color: $pl-color-silver;
+            border: 0;
+            color: $pl-color-black;
+            cursor: pointer;
+            font-size: 0.75em; /* 12 / 16 */
+            padding: 0.5em 1em;
+            position: absolute;
+            right: 0;
+            text-transform: uppercase;
+            transition: background-color 0.25s;
+            top: 0;
+
+            &:focus,
+            &:hover {
+                background-color: $pl-color-gray;
+                outline: 0;
+            }
+        }
+    }
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-pattern {
+        margin-bottom: 8em;
     }
 }

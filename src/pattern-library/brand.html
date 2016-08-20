@@ -57,10 +57,10 @@
     </header>
 
     <main class="pl-main" role="main">
-        <section class="pl-section" id="brand">
+        <section class="pl-section">
             <header class="pl-header pl-header--main">
                 <h1 class="pl-header__title">Brand</h1>
-                <p class="pl-header__synopsis">These are the key elements that the digital identity is comprised of.</p>
+                <p class="pl-header__synopsis">The key components of the digital identity for the brand.</p>
             </header>
         </section>
 
@@ -69,21 +69,65 @@
                 <h2 class="pl-header__title">Logo</h2>
             </header>
 
-            <h3>Default</h3>
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Default</h3>
 
-            <img src="../img/logos/logo-180x60.png" srcset="../img/logos/logo-180x60@2x.png 2x" width="180" height="60" alt="Name of Project logo">
+                    <p class="pl-header__synopsis">180x160</p>
+                </header>
 
-            <h3>Alternative</h3>
+                <img src="../img/logos/logo-180x60.png" srcset="../img/logos/logo-180x60@2x.png 2x" width="180" height="60" alt="Name of Project logo">
 
-            <img src="../img/logos/logo-60x60.png" srcset="../img/logos/logo-60x60@2x.png 2x" width="60" height="60" alt="Name of Project logo">
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="left" data-clipboard-target="#clipboard-1">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-1"><img src="../img/logos/logo-180x60.png" srcset="../img/logos/logo-180x60@2x.png 2x" width="180" height="60" alt="Name of Project logo"></code></pre>
+                </div>
+            </div>
 
-            <h3>Apple Touch Icon</h3>
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Alternative</h3>
 
-            <img src="../apple-touch-icon.png" width="180" height="180" alt="Name of Project logo">
+                    <p class="pl-header__synopsis">60x60</p>
+                </header>
 
-            <h3>Favicon</h3>
+                <img src="../img/logos/logo-60x60.png" srcset="../img/logos/logo-60x60@2x.png 2x" width="60" height="60" alt="Name of Project logo">
 
-            <img src="../favicon.ico" width="32" height="32" alt="Name of Project logo">
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="left" data-clipboard-target="#clipboard-2">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-2"><img src="../img/logos/logo-180x60.png" srcset="../img/logos/logo-180x60@2x.png 2x" width="180" height="60" alt="Name of Project logo"></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Apple touch icon</h3>
+
+                    <p class="pl-header__synopsis">180x180</p>
+                </header>
+
+                <img src="../apple-touch-icon.png" width="180" height="180" alt="Name of Project Apple touch icon">
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="left" data-clipboard-target="#clipboard-3">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-3"><link rel="apple-touch-icon" href="/apple-touch-icon.png"></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Favicon</h3>
+
+                    <p class="pl-header__synopsis">32x32</p>
+                </header>
+
+                <img src="../favicon.ico" width="32" height="32" alt="Name of Project favicon">
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="left" data-clipboard-target="#clipboard-4">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-4"><link rel="icon" href="/favicon.ico" type="image/x-icon"></code></pre>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -91,6 +135,7 @@
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
     <script src="../js/plugins.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/pattern-library/plugins.js"></script>
     <script src="../js/pattern-library/pattern-library.js"></script>
 </body>
 </html>
