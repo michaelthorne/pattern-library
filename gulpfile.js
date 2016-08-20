@@ -35,11 +35,14 @@ gulp.task('clean', function () {
 
 gulp.task('assets', function () {
     return gulp.src([
+            paths.src + 'img/**/',
             paths.src + 'apple-touch-icon.png',
             paths.src + 'favicon.ico',
             paths.src + 'humans.txt',
-            paths.src + 'robots.txt']
-        )
+            paths.src + 'robots.txt'],
+            {
+                'base': paths.src
+            })
         .pipe(gulp.dest(paths.build));
 });
 
@@ -50,8 +53,8 @@ gulp.task('assets', function () {
 gulp.task('scripts', function () {
     return gulp.src([
             paths.src + 'js/*',
-            paths.src + 'js/*/*'], {
-            'base': 'src'
+            paths.src + 'js/**/*'], {
+            'base': paths.src
         })
         .pipe(gulp.dest(paths.build))
         .pipe(browserSync.stream());
@@ -97,6 +100,7 @@ gulp.task('serve', function () {
         startPath: '/pattern-library'
     });
 
+    gulp.watch(paths.src + 'img/**/*', ['assets']);
     gulp.watch(paths.src + '**/*.js', ['scripts']);
     gulp.watch(paths.src + '**/*.scss', ['sass']);
     gulp.watch(paths.src + '**/*.html', ['processhtml']);
