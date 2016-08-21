@@ -22,6 +22,7 @@
  * SECTION
  * ARTICLE
  * PATTERN
+ * PALETTE
  */
 
 
@@ -627,5 +628,33 @@ $pl-font-weight-bold:   700;
 
     .pl-pattern {
         margin-bottom: 8em;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #PATTERN
+\* -------------------------------------------------------------------------- */
+
+.pl-palette {
+
+    /* Color */
+
+    .pl-palette__color {
+        min-height: 5em;
+    }
+}
+
+@media all and (min-width: $pl-bp-small) {
+
+    .pl-palette {
+        display: flex;
+
+        .pl-palette__color {
+            flex: 1 0 auto;
+        }
     }
 }
