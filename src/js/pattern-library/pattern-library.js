@@ -68,6 +68,8 @@ var $tooltip = $('.js-pl-tooltip');
 
 if ($tooltip.length > 0) {
     $tooltip.each(function () {
-        $(this).tooltip(); // Initialize all tooltips
+        $(this).tooltip({
+            container: 'body'
+        }); // Initialize all tooltips
     });
 }
