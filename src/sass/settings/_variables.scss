@@ -8,9 +8,11 @@
 
 /**
  * BREAKPOINTS
+ * COLORS
  * FONTS
  * .....Size
  */
+
 
 
 
@@ -25,6 +27,49 @@ $bp-medium:  60.00em; /*  960 / 16 */
 $bp-large:   80.00em; /* 1280 / 16 */
 $bp-xl:      90.00em; /* 1440 / 16 */
 $bp-xxl:    100.00em; /* 1600 / 16 */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #COLORS
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Primary
+ */
+
+$color-primary:       #ff851b;
+$color-primary-dark:  darken($color-primary, 10%);
+$color-primary-light: lighten($color-primary, 10%);
+
+/**
+ * Secondary
+ */
+
+$color-secondary:       #7fdbff;
+$color-secondary-dark:  darken($color-secondary, 10%);
+$color-secondary-light: lighten($color-secondary, 10%);
+
+/**
+ * Grayscale
+ */
+
+$color-black:  #111;
+$color-gray:   #444;
+$color-silver: #ddd;
+$color-white:  #fff;
+
+/**
+ * Social
+ */
+
+$color-facebook:    #3b5998;
+$color-google-plus: #dd4b39;
+$color-instagram:   #fcaf45;
+$color-twitter:     #1da1f2;
+
 
 
 

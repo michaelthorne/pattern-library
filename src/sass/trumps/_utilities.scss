@@ -1,3 +1,41 @@
+/**
+ * UTILITIES
+ */
+
 /* -------------------------------------------------------------------------- *\
-   #UTILITIES
+   #TABLE OF CONTENTS
 \* -------------------------------------------------------------------------- */
+
+/**
+ * COLORS
+ * .....Background
+ * .....Foreground
+ */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #COLORS
+\* -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   #Background
+   ========================================================================== */
+
+/**
+ * Primary
+ */
+
+.bg-primary--dark  { background-color: $color-primary-dark !important; };
+.bg-primary        { background-color: $color-primary !important; };
+.bg-primary--light { background-color: $color-primary-light !important; };
+
+/**
+ * Secondary
+ */
+
+.bg-secondary--dark  { background-color: $color-secondary-dark !important; };
+.bg-secondary        { background-color: $color-secondary !important; };
+.bg-secondary--light { background-color: $color-secondary-light !important; };
