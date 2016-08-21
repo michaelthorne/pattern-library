@@ -228,6 +228,8 @@ $pl-font-weight-bold:   700;
      */
 
     &.pl-header--pattern {
+        border-bottom: 0.0625em solid $pl-color-silver;
+        padding-bottom: 1em;
 
         .pl-header__title {
             font-size: 1.125em; /* 18 / 16 */
