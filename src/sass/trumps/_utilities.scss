@@ -51,6 +51,15 @@
 .bg-white      { background-color: $color-white !important; };
 
 /**
+ * Utility
+ */
+
+.bg-success { background-color: $color-success !important; };
+.bg-hint    { background-color: $color-hint !important; };
+.bg-warning { background-color: $color-warning !important; };
+.bg-error   { background-color: $color-error !important; };
+
+/**
  * Social
  */
 

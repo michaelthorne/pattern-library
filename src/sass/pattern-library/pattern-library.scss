@@ -47,7 +47,6 @@ $pl-bp-xl:     90.00em; /* 1440 / 16 */
  * http://clrs.cc/
  */
 
-$pl-color-primary:    #ff851b;
 $pl-color-black:      #111;
 $pl-color-gray:       #aaa;
 $pl-color-silver:     #ddd;
@@ -96,14 +95,14 @@ $pl-font-weight-bold:   700;
  */
 
 @mixin pl-anchor() {
-    border-bottom: 0.125em solid $pl-color-silver;
+    border-bottom: 0.0625em solid $pl-color-silver;
     color: $pl-color-black;
     text-decoration: none;
     transition: border-color 0.25s;
 
     &:focus,
     &:hover {
-        border-bottom-color: $pl-color-primary;
+        border-bottom-color: $pl-color-black;
     }
 }
 
@@ -371,7 +370,7 @@ $pl-font-weight-bold:   700;
 
             &:focus,
             &:hover {
-                border-left-color: $pl-color-primary;
+                border-left-color: $pl-color-black;
             }
         }
     }
@@ -620,14 +619,14 @@ $pl-font-weight-bold:   700;
 
             code {
                 font-size: 0.875em; /* 14 / 16 */
-                padding: 2em;
+                padding: 3em;
             }
         }
 
         button {
             background-color: $pl-color-silver;
             border: 0;
-            border-bottom-left-radius: 0.375em;
+            border-bottom-left-radius: 0.25em;
             color: $pl-color-black;
             cursor: pointer;
             font-size: 0.75em; /* 12 / 16 */
@@ -667,7 +666,7 @@ $pl-font-weight-bold:   700;
     /* Color */
 
     .pl-palette__color {
-        margin-bottom: 2em;
+        margin-bottom: 2.1875em;
         min-height: 5em;
         position: relative;
 
@@ -683,10 +682,11 @@ $pl-font-weight-bold:   700;
     /* Title */
 
     .pl-palette__title {
-        bottom: -2em;
+        bottom: -2.5em;
         font-size: 0.875em; /* 14 / 16 */
         left: 0;
         padding-top: 0.5em;
+        padding-bottom: 0.5em;
         position: absolute;
         right: 0;
         text-align: center;
@@ -696,7 +696,7 @@ $pl-font-weight-bold:   700;
 
     .pl-palette__value {
         background-color: rgba($pl-color-white, 0.75);
-        border-bottom-left-radius: 0.375em;
+        border-bottom-left-radius: 0.25em;
         cursor: pointer;
         font-size: 0.75em; /* 12 / 16 */
         opacity: 0;
@@ -718,12 +718,34 @@ $pl-font-weight-bold:   700;
 @media all and (min-width: $pl-bp-small) {
 
     .pl-palette {
+        border-radius: 0.5em;
+        box-shadow: 0 0 1em rgba($pl-color-gray, 0.25);
         display: flex;
+        max-width: 50em;
 
         .pl-palette__color {
             flex: 1 0 auto;
             margin-bottom: 0;
             min-height: 10em;
+
+            &:first-child {
+                border-top-left-radius: 0.5em;
+                border-bottom-left-radius: 0.5em;
+            }
+
+            &:last-child {
+                border-top-right-radius: 0.5em;
+                border-bottom-right-radius: 0.5em;
+
+                .pl-palette__value {
+                    border-top-right-radius: 0.25em;
+                }
+            }
+        }
+
+        .pl-palette__title {
+            bottom: -2em;
+            padding-bottom: 0;
         }
     }
 }
