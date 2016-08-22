@@ -718,7 +718,7 @@ $pl-font-weight-bold:   700;
 @media all and (min-width: $pl-bp-small) {
 
     .pl-palette {
-        border-radius: 0.5em;
+        border-radius: 0.25em;
         box-shadow: 0 0 1em rgba($pl-color-gray, 0.25);
         display: flex;
         max-width: 50em;
@@ -729,16 +729,16 @@ $pl-font-weight-bold:   700;
             min-height: 10em;
 
             &:first-child {
-                border-top-left-radius: 0.5em;
-                border-bottom-left-radius: 0.5em;
+                border-top-left-radius: 0.25em;
+                border-bottom-left-radius: 0.25em;
             }
 
             &:last-child {
-                border-top-right-radius: 0.5em;
-                border-bottom-right-radius: 0.5em;
+                border-top-right-radius: 0.25em;
+                border-bottom-right-radius: 0.25em;
 
                 .pl-palette__value {
-                    border-top-right-radius: 0.25em;
+                    border-top-right-radius: 0.333em;
                 }
             }
         }
