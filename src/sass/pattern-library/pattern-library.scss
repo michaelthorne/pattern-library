@@ -75,6 +75,10 @@ $pl-font-weight-bold:   700;
    #MIXINS
 \* -------------------------------------------------------------------------- */
 
+/**
+ * Clearfix
+ */
+
 @mixin pl-clearfix() {
     &:before,
     &:after {
@@ -84,6 +88,22 @@ $pl-font-weight-bold:   700;
 
     &:after {
         clear: both;
+    }
+}
+
+/**
+ * Anchor
+ */
+
+@mixin pl-anchor() {
+    border-bottom: 0.125em solid $pl-color-silver;
+    color: $pl-color-black;
+    text-decoration: none;
+    transition: border-color 0.25s;
+
+    &:focus,
+    &:hover {
+        border-bottom-color: $pl-color-primary;
     }
 }
 
@@ -140,6 +160,10 @@ $pl-font-weight-bold:   700;
     .pl-header__synopsis {
         font-size: 1.125em; /* 18 / 16 */
         margin-bottom: 0;
+
+        a {
+            @include pl-anchor();
+        }
     }
 
     /* Label */
@@ -561,15 +585,7 @@ $pl-font-weight-bold:   700;
     /* Anchor */
 
     a {
-        border-bottom: 0.125em solid $pl-color-silver;
-        color: $pl-color-black;
-        text-decoration: none;
-        transition: border-color 0.25s;
-
-        &:focus,
-        &:hover {
-            border-bottom-color: $pl-color-primary;
-        }
+        @include pl-anchor();
     }
 
     /* Code */
