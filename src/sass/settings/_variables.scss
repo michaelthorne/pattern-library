@@ -40,45 +40,53 @@ $bp-xxl:    100.00em; /* 1600 / 16 */
  * Primary
  */
 
-$color-primary:       #ff851b;
-$color-primary-dark:  darken($color-primary, 10%);
-$color-primary-light: lighten($color-primary, 10%);
+$color-primary:         #ff851b;
+$color-primary-light:   lighten($color-primary, 10%);
+$color-primary-dark:     darken($color-primary, 10%);
 
 /**
  * Secondary
  */
 
 $color-secondary:       #7fdbff;
-$color-secondary-dark:  darken($color-secondary, 10%);
 $color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark:   darken($color-secondary, 10%);
+
+/**
+ * Tertiary
+ */
+
+$color-tertiary:        #01ff70;
+$color-tertiary-light:  lighten($color-tertiary, 10%);
+$color-tertiary-dark:    darken($color-tertiary, 10%);
 
 /**
  * Neutral
  */
 
-$color-black:      #111;
-$color-gray:       #444;
-$color-silver:     #ddd;
-$color-whitesmoke: #f5f5f5;
-$color-white:      #fff;
+$color-black:           #111;
+$color-gray:            #444;
+$color-silver:          #ddd;
+$color-whitesmoke:      #f5f5f5;
+$color-white:           #fff;
 
 /**
  * Utility
  */
 
-$color-success: #2ecc40;
-$color-hint:    #0074d9;
-$color-warning: #ff851B;
-$color-error:   #ff4136;
+$color-success:         #2ecc40;
+$color-hint:            #0074d9;
+$color-warning:         #ff851B;
+$color-error:           #ff4136;
 
 /**
  * Social
  */
 
-$color-facebook:    #3b5998;
-$color-google-plus: #dd4b39;
-$color-instagram:   #fcaf45;
-$color-twitter:     #1da1f2;
+$color-facebook:        #3b5998;
+$color-google-plus:     #dd4b39;
+$color-instagram:       #fcaf45;
+$color-twitter:         #1da1f2;
 
 
 

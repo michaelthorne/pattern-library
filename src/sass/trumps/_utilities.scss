@@ -28,42 +28,50 @@
  * Primary
  */
 
-.bg-primary--dark  { background-color: $color-primary-dark !important; };
-.bg-primary        { background-color: $color-primary !important; };
-.bg-primary--light { background-color: $color-primary-light !important; };
+.bg-primary--light   { background-color: $color-primary-light !important; };
+.bg-primary          { background-color: $color-primary !important; };
+.bg-primary--dark    { background-color: $color-primary-dark !important; };
 
 /**
  * Secondary
  */
 
-.bg-secondary--dark  { background-color: $color-secondary-dark !important; };
-.bg-secondary        { background-color: $color-secondary !important; };
 .bg-secondary--light { background-color: $color-secondary-light !important; };
+.bg-secondary        { background-color: $color-secondary !important; };
+.bg-secondary--dark  { background-color: $color-secondary-dark !important; };
+
+/**
+ * Tertiary
+ */
+
+.bg-tertiary--light  { background-color: $color-tertiary-light !important; };
+.bg-tertiary         { background-color: $color-tertiary !important; };
+.bg-tertiary--dark   { background-color: $color-tertiary-dark !important; };
 
 /**
  * Neutral
  */
 
-.bg-black      { background-color: $color-black !important; };
-.bg-gray       { background-color: $color-gray !important; };
-.bg-silver     { background-color: $color-silver !important; };
-.bg-whitesmoke { background-color: $color-whitesmoke !important; };
-.bg-white      { background-color: $color-white !important; };
+.bg-black            { background-color: $color-black !important; };
+.bg-gray             { background-color: $color-gray !important; };
+.bg-silver           { background-color: $color-silver !important; };
+.bg-whitesmoke       { background-color: $color-whitesmoke !important; };
+.bg-white            { background-color: $color-white !important; };
 
 /**
  * Utility
  */
 
-.bg-success { background-color: $color-success !important; };
-.bg-hint    { background-color: $color-hint !important; };
-.bg-warning { background-color: $color-warning !important; };
-.bg-error   { background-color: $color-error !important; };
+.bg-success          { background-color: $color-success !important; };
+.bg-hint             { background-color: $color-hint !important; };
+.bg-warning          { background-color: $color-warning !important; };
+.bg-error            { background-color: $color-error !important; };
 
 /**
  * Social
  */
 
-.bg-facebook    { background-color: $color-facebook !important; };
-.bg-google-plus { background-color: $color-google-plus !important; };
-.bg-instagram   { background-color: $color-instagram !important; };
-.bg-twitter     { background-color: $color-twitter !important; };
+.bg-facebook         { background-color: $color-facebook !important; };
+.bg-google-plus      { background-color: $color-google-plus !important; };
+.bg-instagram        { background-color: $color-instagram !important; };
+.bg-twitter          { background-color: $color-twitter !important; };
