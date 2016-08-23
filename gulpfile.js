@@ -13,7 +13,8 @@ var paths = {
  */
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 var del = require('del');
 var moment = require('moment');
 var pkg = require('./package.json');
@@ -39,10 +40,9 @@ gulp.task('assets', function () {
             paths.src + 'apple-touch-icon.png',
             paths.src + 'favicon.ico',
             paths.src + 'humans.txt',
-            paths.src + 'robots.txt'],
-            {
-                'base': paths.src
-            })
+            paths.src + 'robots.txt'], {
+            'base': paths.src
+        })
         .pipe(gulp.dest(paths.build));
 });
 
@@ -56,8 +56,7 @@ gulp.task('scripts', function () {
             paths.src + 'js/**/*'], {
             'base': paths.src
         })
-        .pipe(gulp.dest(paths.build))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(paths.build));
 });
 
 /*
@@ -65,7 +64,7 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('processhtml', function () {
-    return gulp.src(paths.src + '**/**/*.html')
+    return gulp.src(paths.src + '**/*.html')
         .pipe(processHTML({
             process: true,
             data: {
@@ -73,8 +72,7 @@ gulp.task('processhtml', function () {
                 version: pkg.version
             }
         }))
-        .pipe(gulp.dest(paths.build))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest(paths.build));
 });
 
 /*
@@ -85,25 +83,31 @@ gulp.task('sass', function () {
     return gulp.src(paths.src + 'sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(paths.build + '/css'))
-        .pipe(browserSync.stream());
+        .pipe(reload({stream: true}));
+});
+
+/*
+ * Watch
+ */
+
+gulp.task('watch', function () {
+    gulp.watch(paths.src + 'img/**/*', ['assets']);
+    gulp.watch(paths.src + '**/*.js', ['scripts']);
+    gulp.watch(paths.src + '**/*.scss', ['sass']);
+    gulp.watch(paths.src + '**/*.html', ['processhtml']).on('change', reload);
 });
 
 /*
  * Starts up a static server at http://localhost:1337 from the `build` folder
  */
 
-gulp.task('serve', function () {
+gulp.task('server', function () {
     browserSync.init({
         port: 1337,
         reloadDelay: 1000,
         server: paths.build,
         startPath: '/pattern-library'
     });
-
-    gulp.watch(paths.src + 'img/**/*', ['assets']);
-    gulp.watch(paths.src + '**/*.js', ['scripts']);
-    gulp.watch(paths.src + '**/*.scss', ['sass']);
-    gulp.watch(paths.src + '**/*.html', ['processhtml']);
 });
 
 /*
@@ -111,7 +115,7 @@ gulp.task('serve', function () {
  */
 
 gulp.task('default', function () {
-    runSequence('build', ['serve']);
+    runSequence('build', ['server', 'watch']);
 });
 
 /*

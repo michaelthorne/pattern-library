@@ -543,16 +543,22 @@ $pl-font-weight-normal: 400;
 
     /* Headings */
 
+    h2, h3 {
+        font-family: $pl-font-primary;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
     h2 {
+        font-size: 1.5em; /* 24 / 16 */
 
         &:first-child {
             margin-top: 0;
         }
     }
 
-    h2, h3 {
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
+    h3 {
+        font-size: 1.3125em; /* 21 / 16 */
     }
 
     h2 + h3 {
