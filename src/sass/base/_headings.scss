@@ -1,0 +1,27 @@
+/* -------------------------------------------------------------------------- *\
+   #HEADINGS
+\* -------------------------------------------------------------------------- */
+
+h1, .h1 {
+    @include heading($h1-font-size, 75.0000); /* 48 */
+}
+
+h2, .h2 {
+    @include heading($h2-font-size, 66.6667); /* 36 */
+}
+
+h3, .h3 {
+    @include heading($h3-font-size, 87.5000); /* 24 */
+}
+
+h4, .h4 {
+    @include heading($h4-font-size, 85.7140); /* 21 */
+}
+
+h5, .h5 {
+    @include heading($h5-font-size, 88.8888); /* 18 */
+}
+
+h6, .h6 {
+    @include heading($h6-font-size, 87.5000); /* 16 */
+}

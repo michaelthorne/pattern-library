@@ -9,6 +9,7 @@
 /**
  * ANIMATION
  * CLEARFIX
+ * HEADING
  * KEYFRAMES
  */
 
@@ -63,6 +64,26 @@
 
     &:after {
         clear: both;
+    }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HEADING
+\* -------------------------------------------------------------------------- */
+
+@mixin heading($font-size, $percentage, $line-height: 1.2) {
+    font-family: $font-secondary;
+    font-size: $font-size;
+    line-height: $line-height;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    @media all and (min-width: $bp-small) {
+        font-size: ($font-size / $percentage) * 100; /* Increase the font size by a percentage */
     }
 }
 
