@@ -596,12 +596,9 @@ $pl-font-weight-normal: 400;
     /* Code */
 
     code {
-        background-color: $pl-color-black;
         border-radius: 0.25em;
-        color: $pl-color-white;
-        display: block;
+        font-size: 0.875em; /* 14 / 16 */
         padding: 1em;
-        white-space: pre-line;
     }
 }
 
