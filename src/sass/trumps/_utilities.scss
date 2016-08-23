@@ -75,3 +75,28 @@
 .bg-google-plus      { background-color: $color-google-plus !important; };
 .bg-instagram        { background-color: $color-instagram !important; };
 .bg-twitter          { background-color: $color-twitter !important; };
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #FONT
+\* -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   #Family
+   ========================================================================== */
+
+.u-font--secondary { font-family: $font-secondary !important; }
+
+
+
+
+
+/* ==========================================================================
+   #Weight
+   ========================================================================== */
+
+.u-weight--bold   { font-weight: $weight-bold !important; }
+.u-weight--normal { font-weight: $weight-normal !important; }

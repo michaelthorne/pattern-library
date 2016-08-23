@@ -47,10 +47,10 @@ $pl-bp-xl:     90.00em; /* 1440 / 16 */
  * http://clrs.cc/
  */
 
-$pl-color-black:      #111;
-$pl-color-gray:       #aaa;
-$pl-color-silver:     #ddd;
-$pl-color-white:      #fff;
+$pl-color-black:  #111;
+$pl-color-gray:   #aaa;
+$pl-color-silver: #ddd;
+$pl-color-white:  #fff;
 
 /**
  * Fonts
@@ -63,8 +63,8 @@ $pl-font-primary: "Roboto Mono", monospace;
  * Weights
  */
 
-$pl-font-weight-normal: 400;
 $pl-font-weight-bold:   700;
+$pl-font-weight-normal: 400;
 
 
 
@@ -128,7 +128,8 @@ $pl-font-weight-bold:   700;
 .pl-html {
     background-color: $pl-color-white;
     color: $pl-color-black;
-    font: 100%/1.5 $pl-font-primary;
+    font-size: 100%;
+    line-height: 1.5;
 }
 
 
@@ -145,6 +146,7 @@ $pl-font-weight-bold:   700;
     /* Title */
 
     .pl-header__title {
+        font-family: $pl-font-primary;
         font-size: 2.25em; /* 36 / 16 */
         margin-top: 0;
         margin-bottom: 0;
@@ -157,6 +159,7 @@ $pl-font-weight-bold:   700;
     /* Synopsis */
 
     .pl-header__synopsis {
+        font-family: $pl-font-primary;
         font-size: 1.125em; /* 18 / 16 */
         margin-bottom: 0;
 
@@ -169,6 +172,7 @@ $pl-font-weight-bold:   700;
 
     .pl-header__label {
         color: $pl-color-gray;
+        font-family: $pl-font-primary;
         font-size: 0.75em;
         font-weight: $pl-font-weight-bold;
     }
@@ -343,6 +347,7 @@ $pl-font-weight-bold:   700;
 
         .pl-list__item {
             border-bottom: 0.0625em solid $pl-color-silver;
+            font-family: $pl-font-primary;
             font-size: 0.875em; /* 14 / 16 */
             font-weight: $pl-font-weight-bold;
             text-transform: uppercase;
@@ -533,7 +538,8 @@ $pl-font-weight-bold:   700;
 \* -------------------------------------------------------------------------- */
 
 .pl-article {
-    max-width: 42em; /* 672 / 16 */
+    font-family: $pl-font-primary;
+    max-width: 44em; /* 704 / 16 */
 
     /* Headings */
 
@@ -590,7 +596,11 @@ $pl-font-weight-bold:   700;
     /* Code */
 
     code {
+        background-color: $pl-color-black;
+        border-radius: 0.25em;
+        color: $pl-color-white;
         display: block;
+        padding: 1em;
         white-space: pre-line;
     }
 }
@@ -618,6 +628,7 @@ $pl-font-weight-bold:   700;
             margin-bottom: 0;
 
             code {
+                border-radius: 0.25em;
                 font-size: 0.875em; /* 14 / 16 */
                 padding: 3em;
             }
@@ -626,9 +637,11 @@ $pl-font-weight-bold:   700;
         button {
             background-color: $pl-color-silver;
             border: 0;
+            border-top-right-radius: 0.25em;
             border-bottom-left-radius: 0.25em;
             color: $pl-color-black;
             cursor: pointer;
+            font-family: $pl-font-primary;
             font-size: 0.75em; /* 12 / 16 */
             padding: 0.5em 1em;
             position: absolute;
@@ -683,6 +696,7 @@ $pl-font-weight-bold:   700;
 
     .pl-palette__title {
         bottom: -2.5em;
+        font-family: $pl-font-primary;
         font-size: 0.75em; /* 12 / 16 */
         left: 0;
         padding-top: 0.5em;
@@ -698,6 +712,7 @@ $pl-font-weight-bold:   700;
         background-color: rgba($pl-color-white, 0.75);
         border-bottom-left-radius: 0.25em;
         cursor: pointer;
+        font-family: $pl-font-primary;
         font-size: 0.75em; /* 12 / 16 */
         opacity: 0;
         padding: 0.5em 1em;
