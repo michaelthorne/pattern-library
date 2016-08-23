@@ -65,7 +65,7 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('processhtml', function () {
-    return gulp.src(paths.src + '**/*.html')
+    return gulp.src(paths.src + '**/**/*.html')
         .pipe(processHTML({
             process: true,
             data: {
