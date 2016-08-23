@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="pl-html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Elements • Pattern Library | Name of Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pattern-library/pattern-library.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>window.WebFont || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Source Sans Pro:400,700', 'Lora:400,400i,700', 'Roboto Mono:400,700']
+            }
+        });
+    </script>
+</head>
+<body>
+    <header class="pl-header pl-header--primary" role="banner">
+        <a class="pl-link" href="index.html">
+            <img class="pl-logo" src="../img/logos/logo-180x60.png" srcset="../img/logos/logo-180x60@2x.png 2x" width="180" height="60" alt="Name of Project logo">
+        </a>
+
+        <nav class="pl-nav js-pl-nav">
+            <ol class="pl-list">
+                <li class="pl-list__item">
+                    <a class="pl-list__link" href="brand.html">Brand</a>
+                    <ol class="pl-list">
+                        <li class="pl-list__item"><a class="pl-list__link" href="brand.html#logos">Logos</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="brand.html#colors">Colors</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="brand.html#fonts">Fonts</a></li>
+                    </ol>
+                </li>
+                <li class="pl-list__item">
+                    <a class="pl-list__link" href="index.html">Elements</a>
+                    <ol class="pl-list">
+                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#headings">Headings</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#paragraph">Paragraph</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#blockquote">Blockquote</a></li>
+                    </ol>
+                </li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Forms</a></li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Patterns</a></li>
+                <li class="pl-list__item"><a class="pl-list__link" href="index.html">Templates</a></li>
+            </ol>
+        </nav>
+
+        <a class="pl-hamburger js-pl-nav-toggle" href="index.html">
+            <span class="pl-hamburger__bar"></span>
+        </a>
+    </header>
+
+    <main class="pl-main" role="main">
+        <section class="pl-section">
+            <header class="pl-header pl-header--main">
+                <h1 class="pl-header__title">Elements</h1>
+                <p class="pl-header__synopsis"></p>
+            </header>
+        </section>
+
+        <section class="pl-section" id="logos">
+            <header class="pl-header pl-header--section">
+                <h2 class="pl-header__title">Headings</h2>
+
+                <p class="pl-header__synopsis">The headings use the secondary font.</p>
+            </header>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h1</h3>
+                </header>
+
+                <h1 class="h1">The quick brown fox jumps over the lazy dog</h1>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-1">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-1"><h1 class="h1">The quick brown fox jumps over the lazy dog</h1></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h2</h3>
+                </header>
+
+                <h2 class="h2">The quick brown fox jumps over the lazy dog</h2>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-2">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-2"><h2 class="h2">The quick brown fox jumps over the lazy dog</h2></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h3</h3>
+                </header>
+
+                <h3 class="h3">The quick brown fox jumps over the lazy dog</h3>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-3">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-3"><h3 class="h3">The quick brown fox jumps over the lazy dog</h3></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h4</h3>
+                </header>
+
+                <h4 class="h4">The quick brown fox jumps over the lazy dog</h4>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-4">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-4"><h4 class="h4">The quick brown fox jumps over the lazy dog</h4></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h5</h3>
+                </header>
+
+                <h5 class="h5">The quick brown fox jumps over the lazy dog</h5>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-5">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-5"><h5 class="h5">The quick brown fox jumps over the lazy dog</h5></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">h6</h3>
+                </header>
+
+                <h6 class="h6">The quick brown fox jumps over the lazy dog</h6>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-6">Copy</button>
+                    <pre><code class="js-pl-highlight" id="clipboard-6"><h6 class="h6">The quick brown fox jumps over the lazy dog</h6></code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pattern-library/plugins.js"></script>
+    <script src="../js/pattern-library/pattern-library.js"></script>
+</body>
+</html>
