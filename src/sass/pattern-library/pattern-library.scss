@@ -44,17 +44,16 @@ $pl-bp-xl:     90.00em; /* 1440 / 16 */
 
 /**
  * Colors
- * http://clrs.cc/
  */
 
-$pl-color-black:  #111;
-$pl-color-gray:   #aaa;
-$pl-color-silver: #ddd;
-$pl-color-white:  #fff;
+$pl-color-black:     #111;
+$pl-color-gray-dark: #555;
+$pl-color-gray:      #aaa;
+$pl-color-silver:    #ddd;
+$pl-color-white:     #fff;
 
 /**
  * Fonts
- * https://fonts.google.com/specimen/Roboto+Mono
  */
 
 $pl-font-primary: "Roboto Mono", monospace;
@@ -159,6 +158,7 @@ $pl-font-weight-normal: 400;
     /* Synopsis */
 
     .pl-header__synopsis {
+        color: $pl-color-gray-dark;
         font-family: $pl-font-primary;
         font-size: 1.125em; /* 18 / 16 */
         margin-bottom: 0;
@@ -360,6 +360,19 @@ $pl-font-weight-normal: 400;
                 font-size: 1em; /* 16 / 16 */
                 font-weight: $pl-font-weight-normal;
                 text-transform: none;
+
+                .pl-list__link {
+                    color: $pl-color-gray-dark;
+
+                    &:focus,
+                    &:hover {
+                        color: $pl-color-black;
+                    }
+                }
+            }
+
+            .pl-list__link {
+                color: $pl-color-black;
             }
         }
 
@@ -371,7 +384,7 @@ $pl-font-weight-normal: 400;
             display: block;
             padding: 0.75em 1.5em 0.75em 1.25em;
             text-decoration: none;
-            transition: border-color 0.25s;
+            transition: border-color 0.25s, color 0.25s;
 
             &:focus,
             &:hover {
