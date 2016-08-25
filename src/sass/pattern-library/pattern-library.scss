@@ -229,7 +229,7 @@ $pl-font-weight-normal: 400;
      */
 
     &.pl-header--main {
-        border-bottom: 0.125em solid $pl-color-silver;
+        border-bottom: 0.0625em solid $pl-color-silver;
         margin-bottom: 0;
         padding-bottom: 1.5em;
 
@@ -259,8 +259,6 @@ $pl-font-weight-normal: 400;
      */
 
     &.pl-header--pattern {
-        border-bottom: 0.0625em solid $pl-color-silver;
-        padding-bottom: 1em;
 
         .pl-header__title {
             font-size: 1.125em; /* 18 / 16 */
@@ -496,7 +494,8 @@ $pl-font-weight-normal: 400;
 
     .pl-main {
         margin-left: 14em;
-        padding: 2em;
+        padding-right: 2em;
+        padding-left: 2em;
         width: calc(100% - 14em);
     }
 }

@@ -104,7 +104,7 @@ gulp.task('watch', function () {
 gulp.task('server', function () {
     browserSync.init({
         port: 1337,
-        reloadDelay: 1000,
+        reloadDelay: 500,
         server: paths.build,
         startPath: '/pattern-library'
     });
