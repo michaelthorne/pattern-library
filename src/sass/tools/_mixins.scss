@@ -7,11 +7,37 @@
 \* -------------------------------------------------------------------------- */
 
 /**
+ * ANCHOR
  * ANIMATION
+ * BLOCKQUOTE
  * CLEARFIX
  * HEADING
  * KEYFRAMES
  */
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #ANIMATION
+\* -------------------------------------------------------------------------- */
+
+@mixin anchor($border-bottom-color: $color-secondary-light,
+              $border-bottom-color-hover: $color-secondary,
+              $color: $color-black,
+              $color-hover: $color-secondary-dark) {
+    border-bottom: 0.0625em solid $border-bottom-color;
+    color: $color;
+    text-decoration: none;
+    transition: border-color 0.25s, color 0.25s;
+
+    &:focus,
+    &:hover {
+        border-bottom-color: $border-bottom-color-hover;
+        color: $color-hover;
+    }
+}
 
 
 
@@ -33,6 +59,47 @@
 
 @mixin animation($str) {
     animation: #{$str};
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #BLOCKQUOTE
+\* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- *\
+   #BLOCKQUOTE
+\* -------------------------------------------------------------------------- */
+
+@mixin blockquote() {
+    border-left: 0.25em $color-primary solid;
+    margin: 1.5rem 0;
+    padding: 0 1.5rem;
+
+    /* Paragraph */
+
+    p {
+        quotes: "\201C""\201D""\2018""\2019";
+
+        &:before {
+            content: open-quote;
+        }
+
+        &:after {
+            content: close-quote;
+        }
+    }
+
+    /* Cite */
+
+    cite {
+
+        a {
+            @include anchor();
+        }
+    }
 }
 
 

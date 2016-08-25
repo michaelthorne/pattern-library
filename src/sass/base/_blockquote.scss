@@ -1,0 +1,21 @@
+/* -------------------------------------------------------------------------- *\
+   #BLOCKQUOTE
+\* -------------------------------------------------------------------------- */
+
+/**
+ * Indicates that the enclosed text is an extended quotation, as per:
+ * http://html5doctor.com/cite-and-blockquote-reloaded
+ *
+ * E.g.:
+ *
+   <blockquote class="blockquote">
+       <p></p>
+
+       <cite>— <a href="#"></a></cite>
+   </blockquote>
+ *
+ */
+
+.blockquote {
+    @include blockquote();
+}
