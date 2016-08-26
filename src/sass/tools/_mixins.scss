@@ -12,6 +12,7 @@
  * BLOCKQUOTE
  * CLEARFIX
  * HEADING
+ * HORIZONTAL RULE
  * KEYFRAMES
  */
 
@@ -23,11 +24,11 @@
    #ANIMATION
 \* -------------------------------------------------------------------------- */
 
-@mixin anchor($border-bottom-color: $color-secondary-light,
-              $border-bottom-color-hover: $color-secondary,
+@mixin anchor($border-bottom-color: $color-primary-light,
+              $border-bottom-color-hover: $color-primary,
               $color: $color-black,
-              $color-hover: $color-secondary-dark) {
-    border-bottom: 0.0625em solid $border-bottom-color;
+              $color-hover: $color-primary-dark) {
+    border-bottom: 0.125em solid $border-bottom-color;
     color: $color;
     text-decoration: none;
     transition: border-color 0.25s, color 0.25s;
@@ -70,7 +71,7 @@
 \* -------------------------------------------------------------------------- */
 
 @mixin blockquote() {
-    border-left: 0.25em $color-primary solid;
+    border-left: 0.25em $color-secondary solid;
     margin: 1.5rem 0;
     padding: 0 1.5rem;
 
@@ -148,6 +149,22 @@
     @media all and (min-width: $bp-small) {
         font-size: ($font-size / $percentage) * 100; /* Increase the font size by a percentage */
     }
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------- *\
+   #HORIZONTAL RULE
+\* -------------------------------------------------------------------------- */
+
+@mixin hr() {
+    border: 0;
+    border-top: 0.25em solid $color-secondary;
+    display: block;
+    margin: 1.5rem 0;
+    padding: 0;
 }
 
 

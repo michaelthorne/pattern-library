@@ -259,7 +259,6 @@ $pl-font-weight-normal: 400;
      */
 
     &.pl-header--pattern {
-        margin-bottom: 1em;
 
         .pl-header__title {
             font-size: 1.125em; /* 18 / 16 */
@@ -526,6 +525,7 @@ $pl-font-weight-normal: 400;
 \* -------------------------------------------------------------------------- */
 
 .pl-section {
+    border-bottom: 0.0625em solid $pl-color-silver;
 
     & + .pl-section {
         padding-top: 2em;
@@ -675,13 +675,6 @@ $pl-font-weight-normal: 400;
     }
 }
 
-@media all and (min-width: $pl-bp-small) {
-
-    .pl-pattern {
-        margin-bottom: 8em;
-    }
-}
-
 
 
 
@@ -691,6 +684,7 @@ $pl-font-weight-normal: 400;
 \* -------------------------------------------------------------------------- */
 
 .pl-palette {
+    margin-bottom: 2.5em;
 
     /* Color */
 
@@ -752,6 +746,7 @@ $pl-font-weight-normal: 400;
         border-radius: 0.25em;
         box-shadow: 0 0 1em rgba($pl-color-gray, 0.25);
         display: flex;
+        margin-bottom: 2em;
         max-width: 50em;
 
         .pl-palette__color {
