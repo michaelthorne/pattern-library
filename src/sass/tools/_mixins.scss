@@ -71,7 +71,7 @@
 \* -------------------------------------------------------------------------- */
 
 @mixin blockquote() {
-    border-left: 0.25em $color-secondary solid;
+    border-left: 0.25em $color-primary solid;
     margin: 1.5rem 0;
     padding: 0 1.5rem;
 
