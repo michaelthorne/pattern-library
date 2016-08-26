@@ -11,4 +11,11 @@ p {
     a {
         @include anchor();
     }
+
+    /* Mark */
+
+    mark {
+        background-color: $color-secondary;
+        color: $color-black;
+    }
 }

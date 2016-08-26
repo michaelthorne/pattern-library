@@ -7,9 +7,9 @@
  */
 
 *,
-:before,
-:after {
-    box-sizing: border-box;
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 /**
@@ -19,14 +19,14 @@
  */
 
 ::-moz-selection {
-    background: black;
-    color: white;
+    background: $color-black;
+    color: $color-white;
     text-shadow: none;
 }
 
 ::selection {
-    background: black;
-    color: white;
+    background: $color-black;
+    color: $color-white;
     text-shadow: none;
 }
 
