@@ -45,7 +45,7 @@
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#blockquote">Blockquote</a></li>
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#horizontal-rule">Horizontal Rule</a></li>
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#inline-elements">Inline Elements</a></li>
-                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#address">Address</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#lists">Lists</a></li>
                     </ol>
                 </li>
                 <li class="pl-list__item"><a class="pl-list__link" href="index.html">Forms</a></li>
@@ -399,6 +399,85 @@
                 <div class="pl-pattern__example">
                     <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-28">Copy</button>
                     <pre><code class="html js-pl-highlight" id="clipboard-28"><p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="pl-section" id="lists">
+            <header class="pl-header pl-header--section">
+                <h2 class="pl-header__title">Lists</h2>
+            </header>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Description</h3>
+
+                    <p class="pl-header__synopsis">The description list element encloses a list of pairs of terms and descriptions.</p>
+                </header>
+
+                <dl>
+                    <dt><dfn>Bee</dfn>, n.</dt>
+                    <dd>A buzzing insect, known for its role in pollination.</dd>
+
+                    <dt><dfn>Buzz</dfn>, v.</dt>
+                    <dd>To make a continuous, humming noise, like that made by bees.</dd>
+                </dl>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-29">Copy</button>
+                    <pre><code class="html js-pl-highlight" id="clipboard-29"><dl>
+  <dt><dfn>Bee</dfn>, n.</dt>
+  <dd>A buzzing insect, known for its role in pollination.</dd>
+
+  <dt><dfn>Buzz</dfn>, v.</dt>
+  <dd>To make a continuous, humming noise, like that made by bees.</dd>
+</dl></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Ordered</h3>
+
+                    <p class="pl-header__synopsis">The ordered list element represents an ordered list of items.</p>
+                </header>
+
+                <ol class="list list--ordered">
+                    <li>First ordered list item</li>
+                    <li>Second ordered list item</li>
+                    <li>Third ordered list item</li>
+                </ol>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-30">Copy</button>
+                    <pre><code class="html js-pl-highlight" id="clipboard-30"><ol class="list list--ordered">
+    <li>First ordered list item</li>
+    <li>Second ordered list item</li>
+    <li>Third ordered list item</li>
+</ol></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Unordered</h3>
+
+                    <p class="pl-header__synopsis">The unordered list element represents an unordered list of items.</p>
+                </header>
+
+                <ul class="list list--unordered">
+                    <li>An unordered list item</li>
+                    <li>Another unordered list item</li>
+                    <li>Final unordered list item</li>
+                </ul>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-31">Copy</button>
+                    <pre><code class="html js-pl-highlight" id="clipboard-31"><ul class="list list--unordered">
+    <li>An unordered list item</li>
+    <li>Another unordered list item</li>
+    <li>Final unordered list item</li>
+</ul></code></pre>
                 </div>
             </div>
         </section>
