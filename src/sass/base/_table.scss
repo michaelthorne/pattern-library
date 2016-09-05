@@ -1,0 +1,57 @@
+/* -------------------------------------------------------------------------- *\
+   #TABLE
+\* -------------------------------------------------------------------------- */
+
+.table {
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    width: 100%;
+
+    /* Caption */
+
+    caption {
+        margin-bottom: 1em;
+        text-align: left;
+    }
+
+    /* Head */
+
+    thead {
+        border-bottom: 0.125em solid $color-silver;
+
+        th {
+            padding: 1em;
+            text-align: left;
+        }
+    }
+
+    /* Body */
+
+    tbody {
+
+        tr {
+            border-bottom: 0.0625em solid $color-silver;
+        }
+
+        td {
+            padding: 1em;
+        }
+    }
+
+    /**
+     * Striped
+     */
+
+    &.table--striped {
+
+        tbody {
+
+            tr {
+
+                &:nth-child(odd) {
+                    background-color: $color-white-dark;
+                }
+            }
+        }
+    }
+}

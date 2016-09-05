@@ -46,6 +46,7 @@
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#horizontal-rule">Horizontal Rule</a></li>
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#inline-elements">Inline Elements</a></li>
                         <li class="pl-list__item"><a class="pl-list__link" href="elements.html#lists">Lists</a></li>
+                        <li class="pl-list__item"><a class="pl-list__link" href="elements.html#tables">Table</a></li>
                     </ol>
                 </li>
                 <li class="pl-list__item"><a class="pl-list__link" href="index.html">Forms</a></li>
@@ -478,6 +479,174 @@
     <li>Another unordered list item</li>
     <li>Final unordered list item</li>
 </ul></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="pl-section" id="tables">
+            <header class="pl-header pl-header--section">
+                <h2 class="pl-header__title">Tables</h2>
+            </header>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Default</h3>
+                </header>
+
+                <table class="table">
+                    <caption>Motor vehicle inventory</caption>
+                    <thead>
+                    <tr>
+                        <th>Manufacturer</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Volkswagen</td>
+                        <td>Golf VI</td>
+                        <td>2012</td>
+                        <td>Silver</td>
+                        <td>R259,320.00</td>
+                        <td>For Sale</td>
+                    </tr>
+                    <tr>
+                        <td>Ford</td>
+                        <td>Focus ST</td>
+                        <td>2010</td>
+                        <td>White</td>
+                        <td>R327,400.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    <tr>
+                        <td>BMW</td>
+                        <td>320i</td>
+                        <td>2014</td>
+                        <td>Red</td>
+                        <td>R307,218.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    <tr>
+                        <td>Mercedes</td>
+                        <td>C63 AMG</td>
+                        <td>2015</td>
+                        <td>Satin Black</td>
+                        <td>R819,490.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-32">Copy</button>
+                    <pre><code class="html js-pl-highlight" id="clipboard-32"><table class="table">
+    <caption>Motor vehicle inventory</caption>
+    <thead>
+    <tr>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Volkswagen</td>
+        <td>Golf VI</td>
+        <td>2012</td>
+        <td>Silver</td>
+        <td>R259,320.00</td>
+        <td>For Sale</td>
+    </tr>
+    </tbody>
+</table></code></pre>
+                </div>
+            </div>
+
+            <div class="pl-pattern">
+                <header class="pl-header pl-header--pattern">
+                    <h3 class="pl-header__title">Striped</h3>
+                </header>
+
+                <table class="table table--striped">
+                    <caption>Motor vehicle inventory</caption>
+                    <thead>
+                    <tr>
+                        <th>Manufacturer</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Volkswagen</td>
+                        <td>Golf VI</td>
+                        <td>2012</td>
+                        <td>Silver</td>
+                        <td>R259,320.00</td>
+                        <td>For Sale</td>
+                    </tr>
+                    <tr>
+                        <td>Ford</td>
+                        <td>Focus ST</td>
+                        <td>2010</td>
+                        <td>White</td>
+                        <td>R327,400.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    <tr>
+                        <td>BMW</td>
+                        <td>320i</td>
+                        <td>2014</td>
+                        <td>Red</td>
+                        <td>R307,218.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    <tr>
+                        <td>Mercedes</td>
+                        <td>C63 AMG</td>
+                        <td>2015</td>
+                        <td>Satin Black</td>
+                        <td>R819,490.00</td>
+                        <td>Sold</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="pl-pattern__example">
+                    <button class="js-pl-clipboard js-pl-tooltip" title="Copy to clipboard" data-toggle="tooltip" data-placement="top" data-clipboard-target="#clipboard-33">Copy</button>
+                    <pre><code class="html js-pl-highlight" id="clipboard-33"><table class="table table--striped">
+    <caption>Motor vehicle inventory</caption>
+    <thead>
+    <tr>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Volkswagen</td>
+        <td>Golf VI</td>
+        <td>2012</td>
+        <td>Silver</td>
+        <td>R259,320.00</td>
+        <td>For Sale</td>
+    </tr>
+    </tbody>
+</table></code></pre>
                 </div>
             </div>
         </section>
