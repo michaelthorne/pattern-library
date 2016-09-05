@@ -744,7 +744,6 @@ $pl-font-weight-normal: 400;
 @media all and (min-width: $pl-bp-small) {
 
     .pl-palette {
-        border-radius: 0.25em;
         box-shadow: 0 0 1em rgba($pl-color-gray, 0.25);
         display: flex;
         margin-bottom: 2em;
@@ -753,25 +752,6 @@ $pl-font-weight-normal: 400;
         .pl-palette__color {
             flex: 1 0 auto;
             margin-bottom: 0;
-
-            &:first-child {
-                border-top-left-radius: 0.25em;
-                border-bottom-left-radius: 0.25em;
-            }
-
-            &:last-child {
-                border-top-right-radius: 0.25em;
-                border-bottom-right-radius: 0.25em;
-
-                .pl-palette__value {
-                    border-top-right-radius: 0.333em;
-                }
-            }
-        }
-
-        .pl-palette__title {
-            bottom: -2em;
-            padding-bottom: 0;
         }
     }
 }
