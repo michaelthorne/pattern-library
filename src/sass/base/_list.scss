@@ -5,7 +5,7 @@
 .list {
     list-style: none;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     margin-left: 0;
     padding-left: 0;
 
@@ -47,8 +47,8 @@
 
     &.list--ordered {
         list-style: decimal;
-        margin-left: 1rem;
-        padding-left: 1rem;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
     }
 
     /**
@@ -57,7 +57,7 @@
 
     &.list--unordered {
         list-style-type: disc;
-        margin-left: 1rem;
-        padding-left: 1rem;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
     }
 }

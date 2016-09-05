@@ -72,7 +72,7 @@
 
 @mixin blockquote() {
     border-left: 0.25em $color-secondary solid;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     padding: 0 1rem;
 
     /* Paragraph */
@@ -163,7 +163,7 @@
     border: 0;
     border-top: 0.25em solid $color-secondary;
     display: block;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     padding: 0;
 }
 
