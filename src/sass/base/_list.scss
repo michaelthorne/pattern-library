@@ -1,0 +1,63 @@
+/* -------------------------------------------------------------------------- *\
+   #LIST
+\* -------------------------------------------------------------------------- */
+
+.list {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding-left: 0;
+
+    /* Term */
+
+    dt {
+        font-weight: $weight-bold;
+    }
+
+    /* Description */
+
+    dd {
+        margin-bottom: 0.5rem;
+        margin-left: 0;
+    }
+
+    /* Item */
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    .list {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+
+        &.list-ordered {
+            list-style-type: square;
+        }
+
+        &.list--unordered {
+            list-style-type: circle;
+        }
+    }
+
+    /**
+     * Ordered
+     */
+
+    &.list--ordered {
+        list-style: decimal;
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+
+    /**
+     * Unordered
+     */
+
+    &.list--unordered {
+        list-style-type: disc;
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+}

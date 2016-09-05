@@ -560,7 +560,7 @@ $pl-font-weight-normal: 400;
     h2, h3 {
         font-family: $pl-font-primary;
         margin-top: 3rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     h2 {
@@ -576,7 +576,7 @@ $pl-font-weight-normal: 400;
     }
 
     h2 + h3 {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 
     /* Paragraph */
@@ -587,7 +587,7 @@ $pl-font-weight-normal: 400;
 
         & + p,
         & + ul {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
     }
 
@@ -603,7 +603,7 @@ $pl-font-weight-normal: 400;
 
         & + p,
         & + ul {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
     }
 

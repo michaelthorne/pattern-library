@@ -72,8 +72,8 @@
 
 @mixin blockquote() {
     border-left: 0.25em $color-secondary solid;
-    margin: 1.5rem 0;
-    padding: 0 1.5rem;
+    margin: 0 0 1rem 0;
+    padding: 0 1rem;
 
     /* Paragraph */
 
@@ -144,7 +144,7 @@
     font-size: $font-size;
     line-height: $line-height;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     @media all and (min-width: $bp-small) {
         font-size: ($font-size / $percentage) * 100; /* Increase the font size by a percentage */
@@ -163,7 +163,7 @@
     border: 0;
     border-top: 0.25em solid $color-secondary;
     display: block;
-    margin: 1.5rem 0;
+    margin: 0 0 1rem 0;
     padding: 0;
 }
 
