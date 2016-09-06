@@ -43,6 +43,7 @@ if you’d like to contribute to the project directly.
 
 - [A List Apart Pattern Library](http://patterns.alistapart.com)
 - [Astrum Pattern Library](http://astrum.nodividestudio.com/pattern-library)
+- [Bootstrap](http://getbootstrap.com)
 - [Cloud Four Pattern Library](http://cloudfour-patterns.netlify.com)
 - [Code for America Style Guide](http://style.codeforamerica.org)
 - [Lonely Planet Style Guide](http://rizzo.lonelyplanet.com/styleguide)
