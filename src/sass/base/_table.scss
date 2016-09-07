@@ -48,7 +48,7 @@
 
             tr {
 
-                &:nth-child(odd) {
+                &:nth-child(even) {
                     background-color: $color-white-dark;
                 }
             }
