@@ -1,0 +1,21 @@
+/* -------------------------------------------------------------------------- *\
+   #FIGURE
+\* -------------------------------------------------------------------------- */
+
+/**
+ * The <figure> element is intended to be used in conjunction with the
+ * <figcaption> element to mark up diagrams, illustrations, photos, as per:
+ * http://html5doctor.com/the-figure-figcaption-elements
+ *
+ * E.g.:
+ *
+   <figure class="figure">
+       <img src="" width="" height="" alt="">
+       <figcaption></figcaption>
+   </figure>
+ *
+ */
+
+.figure {
+    @include figure();
+}
