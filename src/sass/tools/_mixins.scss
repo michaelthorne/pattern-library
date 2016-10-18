@@ -79,6 +79,7 @@
 
     p {
         quotes: "\201C""\201D""\2018""\2019";
+        margin-bottom: 0;
 
         &:before {
             content: open-quote;
@@ -92,6 +93,8 @@
     /* Cite */
 
     cite {
+        display: block;
+        margin-top: 1em;
 
         a {
             @include anchor();
