@@ -21,6 +21,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
+    "gulp-mustache": "^2.3.0",
     "gulp-processhtml": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "moment": "^2.14.1",
