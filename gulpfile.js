@@ -19,6 +19,7 @@ var del = require('del');
 var ftp = require('vinyl-ftp');
 var credentials = require('./credentials.json');
 var moment = require('moment');
+var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
 var processHTML = require('gulp-processhtml');
 var runSequence = require('run-sequence');
@@ -101,6 +102,14 @@ gulp.task('scripts:dist', function () {
         })
         .pipe(gulp.dest(paths.dist));
 });
+
+/*
+ * Mustache
+ */
+
+gulp.src("./templates/*.mustache")
+    .pipe(mustache('your_json_file.json', {}, {}))
+    .pipe(gulp.dest("./dist"));
 
 /*
  * Process HTML
