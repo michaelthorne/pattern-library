@@ -18,6 +18,7 @@ var reload = browserSync.reload;
 var del = require('del');
 var ftp = require('vinyl-ftp');
 var credentials = require('./credentials.json');
+var merge = require('gulp-merge-json');
 var moment = require('moment');
 var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
@@ -104,12 +105,26 @@ gulp.task('scripts:dist', function () {
 });
 
 /*
+ * Merge
+ */
+
+gulp.task('merge', function () {
+    gulp.src(paths.src + 'data/**/*.json')
+        .pipe(merge('data.json'))
+        .pipe(gulp.dest(paths.build + 'data'));
+});
+
+/*
  * Mustache
  */
 
-gulp.src("./templates/*.mustache")
-    .pipe(mustache('your_json_file.json', {}, {}))
-    .pipe(gulp.dest("./dist"));
+gulp.task('mustache', function () {
+    gulp.src(paths.src + '*.mustache')
+        .pipe(mustache(paths.build + 'data/data.json', {
+            extension: '.html'
+        }))
+        .pipe(gulp.dest(paths.build));
+});
 
 /*
  * Process HTML

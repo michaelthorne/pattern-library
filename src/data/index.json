@@ -1,3 +1,5 @@
 {
-    "test": "123"
+    "index": {
+        "title": "This is the index template."
+    }
 }
