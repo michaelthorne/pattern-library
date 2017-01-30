@@ -30,9 +30,13 @@ var sass = require('gulp-sass');
  * Clean
  */
 
+// Build
+
 gulp.task('clean', function () {
     return del([paths.build]);
 });
+
+// Dist
 
 gulp.task('clean:dist', function () {
     return del([paths.dist]);
@@ -41,6 +45,8 @@ gulp.task('clean:dist', function () {
 /*
  * Copy
  */
+
+// Build
 
 gulp.task('assets', function () {
     return gulp.src([
@@ -53,6 +59,8 @@ gulp.task('assets', function () {
         })
         .pipe(gulp.dest(paths.build));
 });
+
+// Dist
 
 gulp.task('assets:dist', function () {
     return gulp.src([
@@ -86,6 +94,8 @@ gulp.task('ftp', function () {
  * JavaScript
  */
 
+// Build
+
 gulp.task('scripts', function () {
     return gulp.src([
             paths.src + 'js/*',
@@ -94,6 +104,8 @@ gulp.task('scripts', function () {
         })
         .pipe(gulp.dest(paths.build));
 });
+
+// Dist
 
 gulp.task('scripts:dist', function () {
     return gulp.src([
@@ -105,11 +117,11 @@ gulp.task('scripts:dist', function () {
 });
 
 /*
- * Merge
+ * Data
  */
 
-gulp.task('merge', function () {
-    gulp.src(paths.src + 'data/**/*.json')
+gulp.task('data', function () {
+    return gulp.src(paths.src + 'data/**/*.json')
         .pipe(merge('data.json'))
         .pipe(gulp.dest(paths.build + 'data'));
 });
@@ -118,20 +130,34 @@ gulp.task('merge', function () {
  * Mustache
  */
 
+// Build
+
 gulp.task('mustache', function () {
-    gulp.src(paths.src + '*.mustache')
+    return gulp.src(paths.src + '**/*.mustache')
         .pipe(mustache(paths.build + 'data/data.json', {
             extension: '.html'
         }))
         .pipe(gulp.dest(paths.build));
 });
 
+// Dist
+
+gulp.task('mustache:dist', function () {
+    return gulp.src(paths.src + '**/*.mustache')
+        .pipe(mustache(paths.build + 'data/data.json', {
+            extension: '.html'
+        }))
+        .pipe(gulp.dest(paths.dist));
+});
+
 /*
  * Process HTML
  */
 
+// Build
+
 gulp.task('processhtml', function () {
-    return gulp.src(paths.src + '**/*.html')
+    return gulp.src(paths.build + '**/*.html')
         .pipe(processHTML({
             process: true,
             data: {
@@ -141,6 +167,8 @@ gulp.task('processhtml', function () {
         }))
         .pipe(gulp.dest(paths.build));
 });
+
+// Dist
 
 gulp.task('processhtml:dist', function () {
     return gulp.src(paths.src + '**/*.html')
@@ -158,12 +186,16 @@ gulp.task('processhtml:dist', function () {
  * Sass
  */
 
+// Build
+
 gulp.task('sass', function () {
     return gulp.src(paths.src + 'sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(paths.build + '/css'))
         .pipe(reload({stream: true}));
 });
+
+// Dist
 
 gulp.task('sass:dist', function () {
     return gulp.src(paths.src + 'sass/**/*.scss')
@@ -177,10 +209,13 @@ gulp.task('sass:dist', function () {
  */
 
 gulp.task('watch', function () {
-    gulp.watch(paths.src + 'img/**/*', ['assets']);
+    gulp.watch(paths.src + '**/*.{png,ico,txt}', ['assets']);
     gulp.watch(paths.src + '**/*.js', ['scripts']);
     gulp.watch(paths.src + '**/*.scss', ['sass']);
-    gulp.watch(paths.src + '**/*.html', ['processhtml']).on('change', reload);
+    gulp.watch(paths.src + '**/*.json', ['data']);
+    gulp.watch(paths.src + '**/*.mustache', function () {
+        runSequence('mustache', 'processhtml')
+    }).on('change', reload);
 });
 
 /*
@@ -209,7 +244,7 @@ gulp.task('default', function () {
  */
 
 gulp.task('build', function () {
-    runSequence('clean', ['assets', 'scripts', 'sass', 'processhtml']);
+    runSequence('clean', 'data', ['assets', 'scripts', 'sass', 'mustache'], 'processhtml');
 });
 
 /*
@@ -217,7 +252,7 @@ gulp.task('build', function () {
  */
 
 gulp.task('dist', function () {
-    runSequence('clean:dist', ['assets:dist', 'scripts:dist', 'sass:dist', 'processhtml:dist']);
+    runSequence('clean:dist', 'data', ['assets:dist', 'scripts:dist', 'sass:dist', 'mustache'], 'processhtml:dist');
 });
 
 /*
@@ -225,7 +260,7 @@ gulp.task('dist', function () {
  */
 
 gulp.task('deploy', function () {
-   runSequence('clean:dist', ['assets:dist', 'scripts:dist', 'sass:dist', 'processhtml:dist'], 'ftp');
+   runSequence('clean:dist', 'data', ['assets:dist', 'scripts:dist', 'sass:dist', 'mustache'], 'processhtml:dist', 'ftp');
 });
 
 /*
