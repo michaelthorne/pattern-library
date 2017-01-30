@@ -56,7 +56,7 @@ $pl-color-white:     #fff;
  * Fonts
  */
 
-$pl-font-primary: "Roboto Mono", monospace;
+$pl-font-primary: "Roboto", monospace;
 
 /**
  * Weights
@@ -252,6 +252,10 @@ $pl-font-weight-normal: 400;
         .pl-header__title {
             font-size: 1.5em; /* 24 / 16 */
         }
+
+        .pl-header__synopsis {
+            font-size: 1em;
+        }
     }
 
     /**
@@ -399,11 +403,10 @@ $pl-font-weight-normal: 400;
 
         .pl-list {
 
-            .pl-list__item {
-                padding-top: 2em;
+            .pl-list {
 
-                .pl-list__item {
-                    padding-top: 0;
+                .pl-list__link {
+                    padding-left: 3em;
                 }
             }
         }
