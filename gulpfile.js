@@ -4,8 +4,7 @@
 
 var paths = {
     src: 'src/',
-    build: 'build/',
-    dist: 'dist/'
+    build: 'build/'
 };
 
 /*
@@ -30,48 +29,18 @@ var sass = require('gulp-sass');
  * Clean
  */
 
-// Build
-
 gulp.task('clean', function () {
     return del([paths.build]);
-});
-
-// Dist
-
-gulp.task('clean:dist', function () {
-    return del([paths.dist]);
 });
 
 /*
  * Copy
  */
 
-// Build
-
 gulp.task('assets', function () {
-    return gulp.src([
-            paths.src + 'img/**/',
-            paths.src + 'apple-touch-icon.png',
-            paths.src + 'favicon.ico',
-            paths.src + 'humans.txt',
-            paths.src + 'robots.txt'], {
-            'base': paths.src
-        })
-        .pipe(gulp.dest(paths.build));
-});
-
-// Dist
-
-gulp.task('assets:dist', function () {
-    return gulp.src([
-            paths.src + 'img/**/',
-            paths.src + 'apple-touch-icon.png',
-            paths.src + 'favicon.ico',
-            paths.src + 'humans.txt',
-            paths.src + 'robots.txt'], {
-            'base': paths.src
-        })
-        .pipe(gulp.dest(paths.dist));
+    return gulp.src(paths.src + '**/*.{ico,js,png,txt}', {
+        'base': paths.src
+    }).pipe(gulp.dest(paths.build));
 });
 
 /*
@@ -86,41 +55,14 @@ gulp.task('ftp', function () {
         parallel: 10
     });
 
-    return gulp.src([paths.dist + '/**/*'])
-        .pipe(conn.dest('/'));
+    return gulp.src([paths.build + '/**/*']).pipe(conn.dest('/'));
 });
 
 /*
- * JavaScript
+ * Merge JSON
  */
 
-// Build
-
-gulp.task('scripts', function () {
-    return gulp.src([
-            paths.src + 'js/*',
-            paths.src + 'js/**/*'], {
-            'base': paths.src
-        })
-        .pipe(gulp.dest(paths.build));
-});
-
-// Dist
-
-gulp.task('scripts:dist', function () {
-    return gulp.src([
-            paths.src + 'js/*',
-            paths.src + 'js/**/*'], {
-            'base': paths.src
-        })
-        .pipe(gulp.dest(paths.dist));
-});
-
-/*
- * Data
- */
-
-gulp.task('data', function () {
+gulp.task('merge_json', function () {
     return gulp.src(paths.src + 'data/**/*.json')
         .pipe(merge('data.json'))
         .pipe(gulp.dest(paths.build + 'data'));
@@ -130,8 +72,6 @@ gulp.task('data', function () {
  * Mustache
  */
 
-// Build
-
 gulp.task('mustache', function () {
     return gulp.src(paths.src + '**/*.mustache')
         .pipe(mustache(paths.build + 'data/data.json', {
@@ -140,21 +80,9 @@ gulp.task('mustache', function () {
         .pipe(gulp.dest(paths.build));
 });
 
-// Dist
-
-gulp.task('mustache:dist', function () {
-    return gulp.src(paths.src + '**/*.mustache')
-        .pipe(mustache(paths.build + 'data/data.json', {
-            extension: '.html'
-        }))
-        .pipe(gulp.dest(paths.dist));
-});
-
 /*
  * Process HTML
  */
-
-// Build
 
 gulp.task('processhtml', function () {
     return gulp.src(paths.build + '**/*.html')
@@ -168,25 +96,9 @@ gulp.task('processhtml', function () {
         .pipe(gulp.dest(paths.build));
 });
 
-// Dist
-
-gulp.task('processhtml:dist', function () {
-    return gulp.src(paths.src + '**/*.html')
-        .pipe(processHTML({
-            process: true,
-            data: {
-                updated: moment().format('MMM DD, YYYY [•] hh:mm A'),
-                version: pkg.version
-            }
-        }))
-        .pipe(gulp.dest(paths.dist));
-});
-
 /*
  * Sass
  */
-
-// Build
 
 gulp.task('sass', function () {
     return gulp.src(paths.src + 'sass/**/*.scss')
@@ -195,24 +107,16 @@ gulp.task('sass', function () {
         .pipe(reload({stream: true}));
 });
 
-// Dist
-
-gulp.task('sass:dist', function () {
-    return gulp.src(paths.src + 'sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(paths.dist + '/css'))
-        .pipe(reload({stream: true}));
-});
-
 /*
  * Watch
  */
 
 gulp.task('watch', function () {
-    gulp.watch(paths.src + '**/*.{png,ico,txt}', ['assets']);
-    gulp.watch(paths.src + '**/*.js', ['scripts']);
+    gulp.watch(paths.src + '**/*.{ico,js,png,txt}', ['assets']);
     gulp.watch(paths.src + '**/*.scss', ['sass']);
-    gulp.watch(paths.src + '**/*.json', ['data']);
+    gulp.watch(paths.src + '**/*.json', function () {
+        runSequence('merge_json', 'mustache', 'processhtml')
+    }).on('change', reload);
     gulp.watch(paths.src + '**/*.mustache', function () {
         runSequence('mustache', 'processhtml')
     }).on('change', reload);
@@ -232,35 +136,27 @@ gulp.task('server', function () {
 });
 
 /*
- * Default task
- */
-
-gulp.task('default', function () {
-    runSequence('build', ['server', 'watch']);
-});
-
-/*
- * Build task
+ * Build
  */
 
 gulp.task('build', function () {
-    runSequence('clean', 'data', ['assets', 'scripts', 'sass', 'mustache'], 'processhtml');
+    runSequence('clean', 'merge_json', 'assets', 'sass', 'mustache', 'processhtml');
 });
 
 /*
- * Distribution task
+ * Default
  */
 
-gulp.task('dist', function () {
-    runSequence('clean:dist', 'data', ['assets:dist', 'scripts:dist', 'sass:dist', 'mustache'], 'processhtml:dist');
+gulp.task('default', function () {
+    runSequence('build', 'server', 'watch');
 });
 
 /*
- * Deploy task
+ * Deploy
  */
 
 gulp.task('deploy', function () {
-   runSequence('clean:dist', 'data', ['assets:dist', 'scripts:dist', 'sass:dist', 'mustache'], 'processhtml:dist', 'ftp');
+    runSequence('build', 'ftp');
 });
 
 /*
@@ -268,4 +164,4 @@ gulp.task('deploy', function () {
  * i.e. `npm start`
  */
 
-gulp.task('start', ['default']);
+gulp.task('start', 'build');
