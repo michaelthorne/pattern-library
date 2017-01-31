@@ -34,8 +34,8 @@ npm start
 
 ### BrowserSync
 
-BrowserSync allows you to view the pattern library on any device connected to the same network as the computer running the
-pattern library server. In order to browse the pattern library, enter the IP address followed by the default port `1337`
+BrowserSync allows you to view the pattern library on any device connected to the same network as the computer running this
+pattern library. In order to browse the pattern library, enter the IP address followed by the default port `1337`
 into a web browser on one of your devices e.g. `192.168.0.1:1337`
 
 ## Contributing
