@@ -164,4 +164,4 @@ gulp.task('deploy', function () {
  * i.e. `npm start`
  */
 
-gulp.task('start', ['build']);
+gulp.task('start', ['default']);
