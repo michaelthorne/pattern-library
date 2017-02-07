@@ -10,6 +10,9 @@
  * COLORS
  * .....Background
  * .....Foreground
+ * FONT
+ * .....Family
+ * .....Weight
  */
 
 
@@ -75,6 +78,66 @@
 .bg-google-plus      { background-color: $color-google-plus !important; };
 .bg-instagram        { background-color: $color-instagram !important; };
 .bg-twitter          { background-color: $color-twitter !important; };
+
+
+
+
+
+/* ==========================================================================
+   #Foreground
+   ========================================================================== */
+
+/**
+ * Primary
+ */
+
+.primary--light   { color: $color-primary-light !important; };
+.primary          { color: $color-primary !important; };
+.primary--dark    { color: $color-primary-dark !important; };
+
+/**
+ * Secondary
+ */
+
+.secondary--light { color: $color-secondary-light !important; };
+.secondary        { color: $color-secondary !important; };
+.secondary--dark  { color: $color-secondary-dark !important; };
+
+/**
+ * Tertiary
+ */
+
+.tertiary--light  { color: $color-tertiary-light !important; };
+.tertiary         { color: $color-tertiary !important; };
+.tertiary--dark   { color: $color-tertiary-dark !important; };
+
+/**
+ * Neutral
+ */
+
+.black            { color: $color-black !important; };
+.gray             { color: $color-gray !important; };
+.silver           { color: $color-silver !important; };
+.white-dark       { color: $color-white-dark !important; };
+.white            { color: $color-white !important; };
+
+/**
+ * Utility
+ */
+
+.success          { color: $color-success !important; };
+.hint             { color: $color-hint !important; };
+.warning          { color: $color-warning !important; };
+.error            { color: $color-error !important; };
+
+/**
+ * Social
+ */
+
+.facebook         { color: $color-facebook !important; };
+.google-plus      { color: $color-google-plus !important; };
+.instagram        { color: $color-instagram !important; };
+.twitter          { color: $color-twitter !important; };
 
 
 
