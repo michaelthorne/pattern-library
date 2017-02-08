@@ -64,11 +64,15 @@ if ($pl_nav.length > 0) {
  * Tooltip
  * ========================================================================== */
 
-var $tooltip = $('.js-pl-tooltip');
+var $pl_tooltip = $('.js-pl-tooltip');
 
-if ($tooltip.length > 0) {
-    $tooltip.each(function () {
-        // Initialize tooltips
+if ($pl_tooltip.length > 0) {
+
+    /*
+     * Initialize each tooltip
+     */
+
+    $pl_tooltip.each(function () {
         $(this).tooltip({
             container: 'body'
         });
