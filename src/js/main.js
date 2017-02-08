@@ -1,5 +1,5 @@
-/* ==========================================================================
- * Custom
- * ========================================================================== */
+/*
+ * APPLICATION
+ */
 
-// Place all custom JavaScript here.
+// Place all custom JavaScript for your application here.
